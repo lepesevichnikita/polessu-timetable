@@ -1,0 +1,8 @@
+development:
+  url: "redis://h:pf0a8b4c69147c1b41dbe157fd67ecd11f834be790455317f1065b0364b2dccb8@ec2-52-211-50-205.eu-west-1.compute.amazonaws.com:17109"
+
+production:
+  url: <%= ENV["REDIS_URL"] %>
+
+test:
+  url: "redis://h:pf0a8b4c69147c1b41dbe157fd67ecd11f834be790455317f1065b0364b2dccb8@ec2-52-211-50-205.eu-west-1.compute.amazonaws.com:17109"
