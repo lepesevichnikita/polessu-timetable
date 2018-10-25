@@ -54,8 +54,6 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-# Use Redis adapter to run Action Cable in production
-gem 'redis', '~> 4.0'
-gem 'redis_orm', '~> 0.7'
-
 gem 'jquery-rails'
+
+gem "mongoid", "~> 6.1"

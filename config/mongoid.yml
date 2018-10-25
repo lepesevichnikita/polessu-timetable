@@ -1,0 +1,22 @@
+development:
+  # Configure available database clients. (required)
+  clients:
+    # Defines the default client. (required)
+    default:
+      uri: mongodb://heroku_rmwc66xc:7hjfb8867k6qqgrs5btc1b6cg5@ds141783.mlab.com:41783/heroku_rmwc66xc
+      options:
+        connect_timeout: 15
+production:
+  # Configure available database clients. (required)
+  clients:
+    # Defines the default client. (required)
+    default:
+      uri: <%= ENV['MONGODB_URI'] %>
+      options:
+        connect_timeout: 15
+test:
+  clients:
+    default:
+      uri: mongodb://heroku_rmwc66xc:7hjfb8867k6qqgrs5btc1b6cg5@ds141783.mlab.com:41783/heroku_rmwc66xc
+      options:
+        connect_timeout: 15

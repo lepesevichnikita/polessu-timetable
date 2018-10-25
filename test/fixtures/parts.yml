@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  entireclass: MyString
+  divisiontag: MyString
+  studentcount: MyString
+
+two:
+  name: MyString
+  entireclass: MyString
+  divisiontag: MyString
+  studentcount: MyString
