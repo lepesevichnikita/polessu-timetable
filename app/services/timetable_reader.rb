@@ -34,7 +34,7 @@ class TimetableReader
 
   def load_items required_type
     items_of_required_type = find_items required_type
-    RecordsCreatingWorker.perform items_to_hash(items_of_required_type), required_type
+    RecordsCreatingWorker.perform_async items_to_hash(items_of_required_type), required_type
   end
 
   def find_items required_type
