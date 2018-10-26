@@ -57,3 +57,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'jquery-rails'
 
 gem "mongoid", "~> 6.1"
+
+gem "sidekiq", "~> 5.2"
