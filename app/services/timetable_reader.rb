@@ -25,7 +25,7 @@ class TimetableReader
     self
   end
 
-  def parse_xml
+  def load_timetable
     REQUIRED_TYPES.keys.each do |required_type|
       load_items required_type
     end
