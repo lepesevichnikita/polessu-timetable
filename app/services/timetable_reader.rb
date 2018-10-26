@@ -1,3 +1,4 @@
+require 'rake'
 require 'nokogiri'
 require 'open-uri'
 
@@ -55,9 +56,7 @@ class TimetableReader
   end
 
   def self.drop_db
-    REQUIRED_TYPES.values.reverse_each do |class_object|
-      class_object.send(:destroy_all)
-    end
+    Mongoid.purge!
   end
 
-  end
+end
