@@ -22,6 +22,7 @@ class TimetableReader
 
   def initialize
     load_xml
+    self
   end
 
   def parse_xml
@@ -44,7 +45,7 @@ class TimetableReader
   end
 
   def items_to_hash(set_of_items)
-    print "#{ set_of_items }\n"
+    print "#{ set_of_items }\n" if Rails.env.development?
     set_of_items.map { |item| item.to_h.deep_symbolize_keys }
   end
 
