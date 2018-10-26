@@ -3,20 +3,20 @@ require 'open-uri'
 
 class TimetableReader
   TIMETABLE_URL = "http://www.polessu.by/ruz/tt.xml"
-  REQUIRED_TYPES = [
-    :period,
-    :daysdef,
-    :weeksdef,
-    :termsdef,
-    :subject,
-    :teacher,
-    :classroom,
-    :grade,
-    :class, #it is group
-    :group, #it is groups part
-    :lesson,
-    :card
-  ]
+  REQUIRED_TYPES = {
+    period: Period,
+    daysdef: Daysdef,
+    weeksdef: Weeksdef,
+    termsdef: Termsdef,
+    subject: Subject,
+    teacher: Teacher,
+    classroom: Classroom,
+    grade: Grade,
+    class: Group, #it is a students group
+    group: Part, #it is a groups part
+    lesson: Lesson,
+    card: Card
+  }
 
   attr_reader :xml_data
 
@@ -25,21 +25,38 @@ class TimetableReader
   end
 
   def parse_xml
-    REQUIRED_TYPES.each do |required_type|
-      @xml_data.xpath("//#{ required_type }").each do |node_with_item_of_required_type|
-        process_node node_with_item_of_required_type
-      end
+    REQUIRED_TYPES.keys.each do |required_type|
+      load_items required_type
     end
   end
 
-  def process_node(node)
-    node = node.to_h.deep_symbolize_keys
-    print "#{ node }\n"
+  def load_items required_type
+    items_of_required_type = find_items required_type
+    create_records items_to_hash(items_of_required_type), REQUIRED_TYPES[required_type]
+  end
+
+  def find_items required_type
+    @xml_data.xpath("//#{ required_type }")
+  end
+
+  def create_records(items, class_object)
+    class_object.send(:first_or_create, items)
+  end
+
+  def items_to_hash(set_of_items)
+    print "#{ set_of_items }\n"
+    set_of_items.map { |item| item.to_h.deep_symbolize_keys }
   end
 
   def load_xml
-    @xml_data = Nokogiri::HTML(open(TIMETABLE_URL))
+    @xml_data = Nokogiri::XML(open(TIMETABLE_URL))
+    @xml_data.encoding = 'UTF-8'
   end
 
+  def self.drop_db
+    REQUIRED_TYPES.values.reverse_each do |class_object|
+      class_object.send(:destroy_all)
+    end
+  end
 
-end
+  end

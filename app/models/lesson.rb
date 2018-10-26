@@ -1,5 +1,6 @@
 class Lesson
   include Mongoid::Document
+  extend MongoidCustomHelper
 
   field :periodspercard, type: String
   field :periodsperweek, type: String
@@ -7,37 +8,21 @@ class Lesson
   field :capacity, type: String
   field :partner_id, type: String
 
-  belongs_to :subject
-  belongs_to :daysdef
-  belongs_to :weeksdef
-  belongs_to :termsdef
+  belongs_to :subject, foreign_key: :subjectid
+  belongs_to :daysdef, foreign_key: :daysdefid
+  belongs_to :weeksdef, foreign_key: :weeksdefid
+  belongs_to :termsdef, foreign_key: :termsdefid
 
-  has_many :cards
+  has_many :cards, foreign_key: :lessonid
 
   has_and_belongs_to_many :groups
+  has_and_belongs_to_many :parts
   has_and_belongs_to_many :teachers
   has_and_belongs_to_many :classrooms
 
-  alias :groupids :group_ids
-  alias :groupids= :group_ids=
-
-  def groupids=(value)
-    self.group_ids = value.split(',') if !value.empty?
-  end
-
-  alias :teacherids :teacher_ids
-  alias :teacherids= :teacher_ids=
-
-  def teacherids=(value)
-    self.teacher_ids = value.split(',') if !value.empty?
-  end
-
-  alias :classroomids :classroom_ids
-  alias :classroomids= :classroom_ids=
-
-  def classroomids=(value)
-    self.classroom_ids = value.split(',') if !value.empty?
-  end
-
+  setter_alias :classids, :group_ids
+  setter_alias :teacherids, :teacher_ids
+  setter_alias :groupids, :part_ids
+  setter_alias :classroomids, :classroom_ids
 
 end

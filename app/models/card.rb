@@ -1,20 +1,16 @@
 class Card
   include Mongoid::Document
+  extend MongoidCustomHelper
 
   field :period, type: String
   field :days, type: String
   field :weeks, type: String
   field :terms, type: String
 
-  belongs_to :lesson
+  belongs_to :lesson, foreign_key: :lessonid
 
   has_and_belongs_to_many :classrooms
 
-  alias :classroomids :classroom_ids
-  alias :classroomids= :classroom_ids=
-
-  def classroomids=(value)
-    self.classroom_ids = value.split(',') if !value.empty?
-  end
+  setter_alias :classroomids, :classroom_ids
 
 end
