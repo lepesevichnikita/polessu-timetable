@@ -41,7 +41,7 @@ class TimetableReader
   end
 
   def create_records(items, class_object)
-    class_object.send(:first_or_create, items)
+    class_object.send(:first_or_create!, items)
   end
 
   def items_to_hash(set_of_items)
