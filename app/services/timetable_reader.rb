@@ -41,7 +41,8 @@ class TimetableReader
     @xml_data.xpath("//#{ required_type }")
   end
 
-  def create_records(items, class_object)
+  def self.create_records(items, records_type)
+    class_object = REQUIRED_TYPES[records_type.to_sym]
     class_object.send(:first_or_create!, items)
   end
 
