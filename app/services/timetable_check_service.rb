@@ -3,8 +3,6 @@ require 'net/http'
 require 'json'
 
 module TimetableCheckService
-  ONLINE_CONVERTER_API_KEY = Rails.application.secrets.online_converter_api_key
-
   def is_new_timetable?
     is_new = true
     if !TimetableFileInfo.last.nil?
