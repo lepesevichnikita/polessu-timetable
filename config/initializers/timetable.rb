@@ -1,1 +1,2 @@
+TimetableLoadingWorker.peform_asyn
 TimetableLoadingWorker.perform_in(30.minutes)
