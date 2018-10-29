@@ -2,7 +2,7 @@ require 'rake'
 require 'nokogiri'
 require 'open-uri'
 
-class TimetableReader
+class Timetable
   TIMETABLE_URL = "http://www.polessu.by/ruz/tt.xml"
   REQUIRED_TYPES = {
     period: Period,
@@ -23,18 +23,18 @@ class TimetableReader
 
   def initialize
     load_xml
-    self
+    load_timetable_into_db
   end
 
-  def load_timetable
+  def load_timetable_into_db
     REQUIRED_TYPES.keys.each do |required_type|
-      load_items required_type
+      load_items_into_db required_type
     end
   end
 
-  def load_items required_type
+  def load_items_into_db required_type
     items_of_required_type = find_items required_type
-    RecordsCreatingWorker.perform_async items_to_hash(items_of_required_type), required_type
+    create_records items_to_hash(items_of_required_type), required_type
   end
 
   def find_items required_type
