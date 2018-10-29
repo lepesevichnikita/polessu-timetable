@@ -27,7 +27,7 @@ module TimetableCheckService
   end
 
   def make_uri
-    URI(TimetableReader::TIMETABLE_URL)
+    URI(Timetable::TIMETABLE_URL)
   end
 
   def last_timetable_datetime_with_zone
