@@ -9,7 +9,7 @@ class TimetableCheckingWorker
 
   def reload_timetable
     Timetable::drop_db
-    TimetableLoadingSerice.perform.async
+    TimetableLoadingService.perform_async
     TimetableFileInfo.first_or_create!(last_modified: TimetableCheckService::last_modified)
   end
 end
