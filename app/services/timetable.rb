@@ -34,7 +34,7 @@ class Timetable
 
   def load_items_into_db required_type
     items_of_required_type = find_items required_type
-    RecordsCreatingWorker.perform_async items_of_required_type, required_type
+    RecordsCreatingWorker.perform_async items_to_hash(items_of_required_type), required_type
   end
 
   def find_items required_type
@@ -46,7 +46,7 @@ class Timetable
     class_object.send(:first_or_create!, items)
   end
 
-  def self.items_to_hash(set_of_items)
+  def items_to_hash(set_of_items)
     set_of_items.map { |item| item.to_h.deep_symbolize_keys }
   end
 
