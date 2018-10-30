@@ -46,7 +46,7 @@ class Timetable
     class_object.send(:first_or_create!, items)
   end
 
-  def items_to_hash(set_of_items)
+  def self.items_to_hash(set_of_items)
     set_of_items.map { |item| item.to_h.deep_symbolize_keys }
   end
 
