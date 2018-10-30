@@ -34,14 +34,14 @@ class Timetable
 
   def load_items_into_db required_type
     items_of_required_type = find_items required_type
-    create_records items_to_hash(items_of_required_type), required_type
+    RecordsCreatingWorker.perform_async items_of_required_type, required_type
   end
 
   def find_items required_type
     @xml_data.xpath("//#{ required_type }")
   end
 
-  def create_records(items, records_type)
+  def self.create_records(items, records_type)
     class_object = REQUIRED_TYPES[records_type.to_sym]
     class_object.send(:first_or_create!, items)
   end
