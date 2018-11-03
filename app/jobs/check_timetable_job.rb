@@ -9,6 +9,7 @@ class CheckTimetableJob < ApplicationJob
 
   def reload_timetable
     Timetable::drop_db
+    Timetable::create_indexes_for_all_models
     Timetable.new
     TimetableFileInfo.first_or_create!(last_modified: TimetableCheckService::last_modified)
   end

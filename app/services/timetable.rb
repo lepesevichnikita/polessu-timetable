@@ -48,7 +48,6 @@ class Timetable
   def create_records(items, records_type)
     class_object = REQUIRED_TYPES[records_type.to_sym]
     if class_object
-      class_object.send(:create_indexes)
       class_object.send(:first_or_create!, items)
     end
   end
@@ -64,6 +63,12 @@ class Timetable
 
   def self.drop_db
     Mongoid.purge!
+  end
+
+  def self.create_indexes_for_all_models
+    REQUIRED_TYPES.values.each do |required_type_class_object|
+      required_type_class_object.send(:create_indexes)
+    end
   end
 
 end
