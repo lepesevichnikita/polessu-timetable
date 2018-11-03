@@ -15,10 +15,10 @@ class Lesson
 
   has_many :cards, foreign_key: :lessonid
 
-  has_and_belongs_to_many :groups
-  has_and_belongs_to_many :parts
-  has_and_belongs_to_many :teachers
-  has_and_belongs_to_many :classrooms
+  has_and_belongs_to_many :groups, index: true
+  has_and_belongs_to_many :parts, index: true
+  has_and_belongs_to_many :teachers, index: true
+  has_and_belongs_to_many :classrooms, index: true
 
   setter_alias :classids, :group_ids
   setter_alias :teacherids, :teacher_ids
