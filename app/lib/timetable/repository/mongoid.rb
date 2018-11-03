@@ -3,7 +3,7 @@ module Timetable
     # Module Timetable::Repository::Mongoid
     # This module provide functionality for repository based on mongodb
     module Mongoid
-      extend Base
+      include Base
 
       def reload_timetable
         reinitialize_db
