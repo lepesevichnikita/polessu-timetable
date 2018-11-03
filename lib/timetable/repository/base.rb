@@ -1,4 +1,5 @@
 require 'nokogiri'
+require 'timetable/helper'
 
 module Timetable
   module Repository
@@ -6,8 +7,8 @@ module Timetable
     # This module provide a base functional for timetables repository
     module Base
       extend Loader
-      extend Validation
-      extend XML
+      extend Helper::Validation
+      extend Helper::XML
 
       def self.url
         url || TIMETABE_DEFAULT_URL
