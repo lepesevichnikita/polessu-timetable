@@ -1,2 +1,0 @@
-TimetableCheckingWorker.perform_async
-TimetableCheckingWorker.perform_in(30.minutes)
