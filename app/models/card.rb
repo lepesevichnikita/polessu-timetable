@@ -7,9 +7,9 @@ class Card
   field :weeks, type: String
   field :terms, type: String
 
-  belongs_to :lesson, foreign_key: :lessonid
+  belongs_to :lesson, foreign_key: :lessonid, index: true
 
-  has_and_belongs_to_many :classrooms
+  has_and_belongs_to_many :classroom
 
   setter_alias :classroomids, :classroom_ids
 

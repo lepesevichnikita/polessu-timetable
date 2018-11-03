@@ -8,10 +8,10 @@ class Lesson
   field :capacity, type: String
   field :partner_id, type: String
 
-  belongs_to :subject, foreign_key: :subjectid
-  belongs_to :daysdef, foreign_key: :daysdefid
-  belongs_to :weeksdef, foreign_key: :weeksdefid
-  belongs_to :termsdef, foreign_key: :termsdefid
+  belongs_to :subject, foreign_key: :subjectid, index: true
+  belongs_to :daysdef, foreign_key: :daysdefid, index: true
+  belongs_to :weeksdef, foreign_key: :weeksdefid, index: true
+  belongs_to :termsdef, foreign_key: :termsdefid, index: true
 
   has_many :cards, foreign_key: :lessonid
 
