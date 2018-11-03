@@ -16,7 +16,7 @@ module Timetable
         end
       end
 
-      def self.load_json_into_db_through_shell(json)
+      def self.load_json_into_db_through_shell(json_string)
       end
 
       def self.with_transaction(&block)

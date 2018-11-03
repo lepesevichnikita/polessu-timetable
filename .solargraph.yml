@@ -8,10 +8,9 @@ exclude:
 - ".bundle/**/*"
 require:
 - mongoid
-- uri
 - open/http
 - rails
-- 'open-uri'
+- open-uri
 - nokogiri
 - json
 - timetable
