@@ -13,7 +13,8 @@ require:
 - rails
 - 'open-uri'
 - nokogiri
-- 'json'
+- json
+- timetable
 domains: []
 reporters:
 - rubocop

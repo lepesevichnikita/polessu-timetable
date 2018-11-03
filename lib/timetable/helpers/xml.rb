@@ -3,7 +3,6 @@ require 'json'
 
 module Timetable
   module Helper
-    # Module Timetable::Helper::XML
     # This module provide functional for xml data manipulate
     module XML
       extend Validation

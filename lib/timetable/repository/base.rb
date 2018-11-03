@@ -1,4 +1,5 @@
 require 'nokogiri'
+require 'timetable'
 
 module Timetable
   module Repository
@@ -10,7 +11,7 @@ module Timetable
       extend Helper::XML
 
       def self.url
-        url || TIMETABLE_DEFAULT_URL
+        url || TIMETABE_DEFAULT_URL
       end
 
       def self.url=(value)
