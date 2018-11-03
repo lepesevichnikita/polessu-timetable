@@ -1,5 +1,4 @@
 require 'nokogiri'
-require 'timetable/helper'
 
 module Timetable
   module Repository
