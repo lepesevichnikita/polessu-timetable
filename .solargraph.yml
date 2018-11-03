@@ -11,10 +11,14 @@ require:
 - uri
 - open/http
 - rails
+- 'open-uri'
+- nokogiri
+- 'json'
 domains: []
 reporters:
 - rubocop
 - require_not_found
-plugins: []
+plugins:
+- runtime
 require_paths: []
 max_files: 5000

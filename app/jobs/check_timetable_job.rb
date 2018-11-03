@@ -1,16 +1,16 @@
+# Job CheckTimetableJob
+# This job checks is there a new timetable a reload an timetable
 class CheckTimetableJob < ApplicationJob
   queue_as :default
 
   def perform
-    if TimetableCheckService::is_new_timetable?
-      reload_timetable
-    end
+    reload_timetable if TimetableCheckService.new_timetable?
   end
 
   def reload_timetable
-    Timetable::drop_db
-    Timetable::create_indexes_for_all_models
-    Timetable.new
-    TimetableFileInfo.first_or_create!(last_modified: TimetableCheckService::last_modified)
+    TimetableMongoidRepository.reload_timetable
+    TimetableFileInfo.first_or_create!(
+      last_modified: TimetableCheckService.last_modified
+    )
   end
 end
