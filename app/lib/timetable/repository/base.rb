@@ -9,6 +9,8 @@ module Timetable
       extend Helper::Validation
       extend Helper::XML
 
+      mattr_accessor :url
+
       def url
         url || TIMETABLE_DEFAULT_URL
       end
