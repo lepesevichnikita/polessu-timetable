@@ -6,7 +6,7 @@ module Timetable
   module Loader
     DEFAULT_ENCODING = 'UTF-8'.freeze
 
-    def self.get_timetable_from(url, format = :xml)
+    def get_timetable_from(url, format = :xml)
       data = open(url)
       send(format, data)
     end
