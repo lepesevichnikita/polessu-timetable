@@ -12,7 +12,7 @@ module Timetable
 
       def self.should_be_instance_of(attr_name, value, class_object)
         should_be_instance_of(:class_name, class_object, Class)
-        raise invalid_instance_message(attr_name, class_object.name) unless value.is_a?(class_object)
+        unless value.is_a?(class_object)
       end
 
       def self.invalid_instance_message(attr_name, class_name)
