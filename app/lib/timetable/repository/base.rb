@@ -10,7 +10,7 @@ module Timetable
       extend Helper::XML
 
       def self.url
-        url || TIMETABE_DEFAULT_URL
+        url || TIMETABLE_DEFAULT_URL
       end
 
       def self.url=(value)
