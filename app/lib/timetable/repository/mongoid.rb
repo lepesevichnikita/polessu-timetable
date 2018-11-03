@@ -5,21 +5,21 @@ module Timetable
     module Mongoid
       extend Base
 
-      def self.reload_timetable
+      def reload_timetable
         reinitialize_db
         json_data = get_timetable_from(url, :json)
       end
 
-      def self.create_indexes_for_all_models
+      def create_indexes_for_all_models
         REQUIRED_TYPES.values.each do |required_type_class_object|
           required_type_class_object.send(:create_indexes)
         end
       end
 
-      def self.load_json_into_db_through_shell(json_string)
+      def load_json_into_db_through_shell(json_string)
       end
 
-      def self.with_transaction(&block)
+      def with_transaction(&block)
         validate block
         should_be_instance_of(:block, block, Proc)
         with_session do |session|
@@ -29,7 +29,7 @@ module Timetable
         end
       end
 
-      def self.with_session(&block)
+      def with_session(&block)
         validate(block)
         should_be_instance_of(:block, block, Proc)
         session = Mongoid.client(:default).start_session
@@ -42,25 +42,25 @@ module Timetable
         end
       end
 
-      def self.initialize_db
+      def initialize_db
         create_indexes_for_all_models
       end
 
-      def self.reinitialize_db
+      def reinitialize_db
         drop_db
         initialize_db
       end
 
-      def self.drop_db
+      def drop_db
         Mongoid.purge!
       end
 
-      def self.parse_session_error(error, block)
+      def parse_session_error(error, block)
         with_session(block) if unknown_transaction_commit_result_label(error)
         raise error
       end
 
-      def self.unknown_transaction_commit_result_label(error)
+      def unknown_transaction_commit_result_label(error)
         error.label?(Mongo::Error::UNKNOWN_TRANSACTION_COMMIT_RESULT_LABEL)
       end
 
