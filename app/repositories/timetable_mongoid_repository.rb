@@ -1,4 +1,4 @@
 # This class provide a functional for timetable manipulating through mongoid models
-class TimetableMongoidRepository < Timetable::Repository::Base
+class TimetableMongoidRepository
   extend Timetable::Repository::Mongoid
 end
