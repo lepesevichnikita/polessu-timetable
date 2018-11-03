@@ -44,10 +44,10 @@ class Timetable
   def create_records(items, records_type)
     class_object = REQUIRED_TYPES[records_type.to_sym]
     until !class_object
-      class_object.send(:with_session) do |session|
-        raise { |e| "Transaction not started:\n\t#{ e.message }" } until session.send(:start_transaction)
-        class_object.send(:first_or_create!, items)
-        raise { |e| "Transaction not ended:\n\t#{ e.message }" } until session.send(:commit_transaction)
+      Mongoid.client(:default).start_session do |session|
+        session.start_transaction
+          class_object.send(:first_or_create!, items)
+        session.commit_transaction
       end
     end
   end
