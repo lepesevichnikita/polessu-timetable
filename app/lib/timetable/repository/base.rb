@@ -15,7 +15,7 @@ module Timetable
 
       def self.url=(value)
         should_be_instance_of(:url, value, String)
-        self.url = value || url
+        self.url = value || TIMETABLE_DEFAULT_URL
       end
 
       def self.xml(data)
