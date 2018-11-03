@@ -63,7 +63,6 @@ module Timetable
       def unknown_transaction_commit_result_label(error)
         error.label?(Mongo::Error::UNKNOWN_TRANSACTION_COMMIT_RESULT_LABEL)
       end
-
     end
   end
 end
