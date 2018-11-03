@@ -9,22 +9,22 @@ module Timetable
       extend Helper::Validation
       extend Helper::XML
 
-      def self.url
+      def url
         url || TIMETABLE_DEFAULT_URL
       end
 
-      def self.url=(value)
+      def url=(value)
         should_be_instance_of(:url, value, String)
-        self.url = value || TIMETABLE_DEFAULT_URL
+        url = value || TIMETABLE_DEFAULT_URL
       end
 
-      def self.xml(data)
+      def xml(data)
         res = Nokogiri::XML.new(data)
         res.encoding = DEFAULT_ENCODING
         res
       end
 
-      def self.json(data)
+      def json(data)
         validate data
         should_be_instance_of(:data, data, Nokogiri::XML)
         xml_data = xml(data)
