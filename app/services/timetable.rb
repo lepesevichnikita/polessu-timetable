@@ -27,9 +27,13 @@ class Timetable
   end
 
   def load_timetable_into_db
+    session = Mongoid.client(:default).start_session
+    session.start_transaction
     REQUIRED_TYPES.keys.each do |required_type|
       load_items_into_db required_type
     end
+    session.commit_transaction
+    session.end_session
   end
 
   def load_items_into_db required_type
@@ -44,11 +48,7 @@ class Timetable
   def create_records(items, records_type)
     class_object = REQUIRED_TYPES[records_type.to_sym]
     if class_object
-      session = Mongoid.client(:default).start_session
-      session.start_transaction
       class_object.send(:first_or_create!, items)
-      session.commit_transaction
-      session.end_session
     end
   end
 
