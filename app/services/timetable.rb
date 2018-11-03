@@ -48,6 +48,7 @@ class Timetable
   def create_records(items, records_type)
     class_object = REQUIRED_TYPES[records_type.to_sym]
     if class_object
+      class_object.send(:create_indexes)
       class_object.send(:first_or_create!, items)
     end
   end
