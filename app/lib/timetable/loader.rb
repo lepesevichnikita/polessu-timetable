@@ -24,7 +24,7 @@ module Timetable
     # @return [Nokogiri::XML] Data in xml
     def xml(data)
       validate data
-      res = Nokogiri::XML.new(data)
+      res = Nokogiri::XML(data)
       res.encoding = DEFAULT_ENCODING
       res
     end
