@@ -9,7 +9,8 @@ module Timetable
       # @see #get_timetable_from
       def reload_timetable
         reinitialize_db
-        json_data = get_timetable_from(timetable_url, :json)
+        hash_data = get_timetable_from(timetable_url, :hash)
+        insert_hash_into_db(hash_data)
       end
 
       # Create indexes for models of require types
@@ -19,17 +20,29 @@ module Timetable
         end
       end
 
-      def load_json_into_db_through_shell(json_string)
+      # Insert hash into db with transcation
+      # @param hash [Hash<Symbol, Array<Hash>>] Hash with records for collections
+      def insert_hash_into_db(hash)
+        with_transaction do
+          hash.each do |collection, records|
+            client[collection].insert_many(records)
+          end
+        end
       end
+
 
       def with_transaction(&block)
         validate block
         should_be_instance_of(:block, block, Proc)
-        with_session do |session|
+        with_session do |session, client|
           session.start_transaction
-          block.call session
+          yield session, client
           session.commit_transaction
         end
+      end
+
+      def client(name=:default)
+        Mongoid.client(name)
       end
 
       # Execute passed block in session
@@ -41,11 +54,11 @@ module Timetable
       #  end
       # @param [Proc, Block] block - block for execution
       def with_session(&block)
-        validate(block)
         should_be_instance_of(:block, block, Proc)
-        session = Mongoid.client(:default).start_session
+        client = Mongoid.client(:default)
+        session = client.start_session
         begin
-          block.call(session)
+          yield session, client
           session.end_session
         rescue Mongo::Error => e
           parse_session_error(e, block)
