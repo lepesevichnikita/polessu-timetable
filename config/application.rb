@@ -24,5 +24,6 @@ module PolessuTimetable
     config.eager_load_paths << Rails.root.join('lib')
     config.eager_load_paths << Rails.root.join('lib/timetable')
     config.active_job.queue_adapter = :sidekiq
+    config.action_controller.raise_on_unfiltered_parameters = true
   end
 end

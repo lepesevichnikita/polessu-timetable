@@ -9,7 +9,7 @@ module Timetable
       # @see #get_timetable_from
       def reload_timetable
         reinitialize_db
-        json_data = get_timetable_from(url, :json)
+        json_data = get_timetable_from(timetable_url, :json)
       end
 
       # Create indexes for models of require types
