@@ -26,5 +26,13 @@ module Timetable
         lesson: Lesson,
         card: Card
       }.freeze
+
+    # Type aliases
+    # @return [Hash<Symbol, Symbol>] Hash with types aliases
+    TYPE_ALIASES =
+      {
+        class: :group,
+        group: :part
+      }.freeze
   end
 end

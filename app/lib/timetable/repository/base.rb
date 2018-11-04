@@ -20,6 +20,7 @@ module Timetable
       mattr_accessor :timetable_url, default: Default::TIMETABLE_URL
       mattr_accessor :required_types, default: Default::REQUIRED_TYPES
       mattr_accessor :encoding, default: Default::ENCODING
+      mattr_accessor :type_aliases, default: Default::TYPE_ALIASES
 
       # Data to XML
       # @param [Object] data - data of any type, which supported by Nokogiri::XML
