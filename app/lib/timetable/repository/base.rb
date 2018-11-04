@@ -13,13 +13,12 @@ module Timetable
     # @!attribute encoding [String]
     #  @return [String] String with encoding type
     module Base
-      extend Loader
+      extend Loaderend
       extend Helper::Validation
 
-      mattr_accessor :timetable_url, default: Default::TIMETABLE_URL
-      mattr_accessor :required_types, default: Default::REQUIRED_TYPES
-      mattr_accessor :encoding, default: Default::ENCODING
-
+      mattr_accessor(:timetable_url) { Default::TIMETABLE_URL }
+      mattr_accessor(:required_types) { Default::REQUIRED_TYPES }
+      mattr_accessor(:encoding) { Default::ENCODING }
     end
   end
 end
