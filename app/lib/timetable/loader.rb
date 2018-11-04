@@ -29,13 +29,22 @@ module Timetable
       res
     end
 
-    # Data to JSON-string from XML
-    # @param [Nokogiri::XML] data - data in XML
+    # Data to JSON-string
+    # @param [Object] data - data of any type, which supported by Nokogiri::XML
+    # @note data wil be converted into Nokogiri::XML and then to json
     # @return [String] Data in JSON
     def json(data)
-      should_be_instance_of(:data, data, Nokogiri::XML)
       xml_data = xml(data)
-      xml_data_to_json xml_data
+      xml_to_json xml_data
+    end
+
+    # Data to ruby Hash
+    # @param [Object] data - data of any type, which supported by Nokogiri::XML
+    # @note data wil be converted into Nokogiri::XML and then to hash
+    # @return [Hash] Data in hash
+    def hash(data)
+      xml_data = xml(data)
+      xml_to_hash xml_data
     end
   end
 end

@@ -160,7 +160,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Drop database copmpletely with system info.</p>
+</div></span>
   
 </li>
 
@@ -382,7 +384,7 @@ fatal and raise else.</p>
   
   
   <h3 class="inherited">Methods included from <span class='object_link'><a href="../Loader.html" title="Timetable::Loader (module)">Loader</a></span></h3>
-  <p class="inherited"><span class='object_link'><a href="../Loader.html#get_timetable_from-instance_method" title="Timetable::Loader#get_timetable_from (method)">#get_timetable_from</a></span>, <span class='object_link'><a href="../Loader.html#json-instance_method" title="Timetable::Loader#json (method)">#json</a></span>, <span class='object_link'><a href="../Loader.html#xml-instance_method" title="Timetable::Loader#xml (method)">#xml</a></span></p>
+  <p class="inherited"><span class='object_link'><a href="../Loader.html#get_timetable_from-instance_method" title="Timetable::Loader#get_timetable_from (method)">#get_timetable_from</a></span>, <span class='object_link'><a href="../Loader.html#hash-instance_method" title="Timetable::Loader#hash (method)">#hash</a></span>, <span class='object_link'><a href="../Loader.html#json-instance_method" title="Timetable::Loader#json (method)">#json</a></span>, <span class='object_link'><a href="../Loader.html#xml-instance_method" title="Timetable::Loader#xml (method)">#xml</a></span></p>
 
   
   
@@ -393,7 +395,7 @@ fatal and raise else.</p>
   
   
   <h3 class="inherited">Methods included from <span class='object_link'><a href="../Helper/XML.html" title="Timetable::Helper::XML (module)">Helper::XML</a></span></h3>
-  <p class="inherited"><span class='object_link'><a href="../Helper/XML.html#get_items_of_required_type_from_xml-instance_method" title="Timetable::Helper::XML#get_items_of_required_type_from_xml (method)">#get_items_of_required_type_from_xml</a></span>, <span class='object_link'><a href="../Helper/XML.html#split_string_value_by_separator_in_hash-instance_method" title="Timetable::Helper::XML#split_string_value_by_separator_in_hash (method)">#split_string_value_by_separator_in_hash</a></span>, <span class='object_link'><a href="../Helper/XML.html#xml_data_to_json-instance_method" title="Timetable::Helper::XML#xml_data_to_json (method)">#xml_data_to_json</a></span>, <span class='object_link'><a href="../Helper/XML.html#xml_item_to_deep_symbolized_hash-instance_method" title="Timetable::Helper::XML#xml_item_to_deep_symbolized_hash (method)">#xml_item_to_deep_symbolized_hash</a></span>, <span class='object_link'><a href="../Helper/XML.html#xml_items_to_array_of_hashes-instance_method" title="Timetable::Helper::XML#xml_items_to_array_of_hashes (method)">#xml_items_to_array_of_hashes</a></span></p>
+  <p class="inherited"><span class='object_link'><a href="../Helper/XML.html#get_items_of_required_type_from_xml-instance_method" title="Timetable::Helper::XML#get_items_of_required_type_from_xml (method)">#get_items_of_required_type_from_xml</a></span>, <span class='object_link'><a href="../Helper/XML.html#process_hash_value_by_key-instance_method" title="Timetable::Helper::XML#process_hash_value_by_key (method)">#process_hash_value_by_key</a></span>, <span class='object_link'><a href="../Helper/XML.html#xml_item_to_hash_with_deep_symbolized_keys-instance_method" title="Timetable::Helper::XML#xml_item_to_hash_with_deep_symbolized_keys (method)">#xml_item_to_hash_with_deep_symbolized_keys</a></span>, <span class='object_link'><a href="../Helper/XML.html#xml_items_to_array_of_hashes-instance_method" title="Timetable::Helper::XML#xml_items_to_array_of_hashes (method)">#xml_items_to_array_of_hashes</a></span>, <span class='object_link'><a href="../Helper/XML.html#xml_to_hash-instance_method" title="Timetable::Helper::XML#xml_to_hash (method)">#xml_to_hash</a></span>, <span class='object_link'><a href="../Helper/XML.html#xml_to_json-instance_method" title="Timetable::Helper::XML#xml_to_json (method)">#xml_to_json</a></span></p>
 
 
   <div id="instance_method_details" class="method_details_list">
@@ -454,18 +456,29 @@ fatal and raise else.</p>
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Drop database copmpletely with system info</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-70
 71
-72</pre>
+72
+73</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/lib/timetable/repository/mongoid.rb', line 70</span>
+      <pre class="code"><span class="info file"># File 'app/lib/timetable/repository/mongoid.rb', line 71</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_drop_db'>drop_db</span>
   <span class='const'><span class='object_link'><a href="" title="Timetable::Repository::Mongoid (module)">Mongoid</a></span></span><span class='period'>.</span><span class='id identifier rubyid_purge!'>purge!</span>
@@ -623,13 +636,13 @@ fatal and raise else</p>
       <pre class="lines">
 
 
-79
 80
 81
-82</pre>
+82
+83</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/lib/timetable/repository/mongoid.rb', line 79</span>
+      <pre class="code"><span class="info file"># File 'app/lib/timetable/repository/mongoid.rb', line 80</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_parse_session_error'>parse_session_error</span><span class='lparen'>(</span><span class='id identifier rubyid_error'>error</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_with_session'>with_session</span><span class='lparen'>(</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_unknown_transaction_commit_result_label'>unknown_transaction_commit_result_label</span><span class='lparen'>(</span><span class='id identifier rubyid_error'>error</span><span class='rparen'>)</span>
@@ -737,7 +750,7 @@ fatal and raise else</p>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_reload_timetable'>reload_timetable</span>
   <span class='id identifier rubyid_reinitialize_db'>reinitialize_db</span>
-  <span class='id identifier rubyid_json_data'>json_data</span> <span class='op'>=</span> <span class='id identifier rubyid_get_timetable_from'>get_timetable_from</span><span class='lparen'>(</span><span class='id identifier rubyid_url'>url</span><span class='comma'>,</span> <span class='symbol'>:json</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_json_data'>json_data</span> <span class='op'>=</span> <span class='id identifier rubyid_get_timetable_from'>get_timetable_from</span><span class='lparen'>(</span><span class='id identifier rubyid_timetable_url'>timetable_url</span><span class='comma'>,</span> <span class='symbol'>:json</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -759,12 +772,12 @@ fatal and raise else</p>
       <pre class="lines">
 
 
-84
 85
-86</pre>
+86
+87</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/lib/timetable/repository/mongoid.rb', line 84</span>
+      <pre class="code"><span class="info file"># File 'app/lib/timetable/repository/mongoid.rb', line 85</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_unknown_transaction_commit_result_label'>unknown_transaction_commit_result_label</span><span class='lparen'>(</span><span class='id identifier rubyid_error'>error</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_error'>error</span><span class='period'>.</span><span class='id identifier rubyid_label?'>label?</span><span class='lparen'>(</span><span class='const'>Mongo</span><span class='op'>::</span><span class='const'>Error</span><span class='op'>::</span><span class='const'>UNKNOWN_TRANSACTION_COMMIT_RESULT_LABEL</span><span class='rparen'>)</span>
@@ -913,7 +926,7 @@ end</code></pre>
 </div>
 
       <div id="footer">
-  Generated on Sun Nov  4 05:22:50 2018 by
+  Generated on Sun Nov  4 17:15:29 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.16 (ruby-2.5.1).
 </div>

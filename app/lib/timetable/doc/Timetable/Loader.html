@@ -147,6 +147,30 @@ timetables</p>
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#hash-instance_method" title="#hash (instance method)">#<strong>hash</strong>(data)  &#x21d2; Hash </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Data to ruby Hash.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#json-instance_method" title="#json (instance method)">#<strong>json</strong>(data)  &#x21d2; String </a>
     
 
@@ -162,7 +186,7 @@ timetables</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Data to JSON-string from XML.</p>
+<p>Data to JSON-string.</p>
 </div></span>
   
 </li>
@@ -216,7 +240,7 @@ timetables</p>
   
   
   <h3 class="inherited">Methods included from <span class='object_link'><a href="Helper/XML.html" title="Timetable::Helper::XML (module)">Helper::XML</a></span></h3>
-  <p class="inherited"><span class='object_link'><a href="Helper/XML.html#get_items_of_required_type_from_xml-instance_method" title="Timetable::Helper::XML#get_items_of_required_type_from_xml (method)">get_items_of_required_type_from_xml</a></span>, <span class='object_link'><a href="Helper/XML.html#split_string_value_by_separator_in_hash-instance_method" title="Timetable::Helper::XML#split_string_value_by_separator_in_hash (method)">split_string_value_by_separator_in_hash</a></span>, <span class='object_link'><a href="Helper/XML.html#xml_data_to_json-instance_method" title="Timetable::Helper::XML#xml_data_to_json (method)">xml_data_to_json</a></span>, <span class='object_link'><a href="Helper/XML.html#xml_item_to_deep_symbolized_hash-instance_method" title="Timetable::Helper::XML#xml_item_to_deep_symbolized_hash (method)">xml_item_to_deep_symbolized_hash</a></span>, <span class='object_link'><a href="Helper/XML.html#xml_items_to_array_of_hashes-instance_method" title="Timetable::Helper::XML#xml_items_to_array_of_hashes (method)">xml_items_to_array_of_hashes</a></span></p>
+  <p class="inherited"><span class='object_link'><a href="Helper/XML.html#get_items_of_required_type_from_xml-instance_method" title="Timetable::Helper::XML#get_items_of_required_type_from_xml (method)">get_items_of_required_type_from_xml</a></span>, <span class='object_link'><a href="Helper/XML.html#process_hash_value_by_key-instance_method" title="Timetable::Helper::XML#process_hash_value_by_key (method)">process_hash_value_by_key</a></span>, <span class='object_link'><a href="Helper/XML.html#xml_item_to_hash_with_deep_symbolized_keys-instance_method" title="Timetable::Helper::XML#xml_item_to_hash_with_deep_symbolized_keys (method)">xml_item_to_hash_with_deep_symbolized_keys</a></span>, <span class='object_link'><a href="Helper/XML.html#xml_items_to_array_of_hashes-instance_method" title="Timetable::Helper::XML#xml_items_to_array_of_hashes (method)">xml_items_to_array_of_hashes</a></span>, <span class='object_link'><a href="Helper/XML.html#xml_to_hash-instance_method" title="Timetable::Helper::XML#xml_to_hash (method)">xml_to_hash</a></span>, <span class='object_link'><a href="Helper/XML.html#xml_to_json-instance_method" title="Timetable::Helper::XML#xml_to_json (method)">xml_to_json</a></span></p>
 
 
   <div id="instance_method_details" class="method_details_list">
@@ -329,9 +353,9 @@ timetables</p>
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="json-instance_method">
+  <h3 class="signature " id="hash-instance_method">
   
-    #<strong>json</strong>(data)  &#x21d2; <tt>String</tt> 
+    #<strong>hash</strong>(data)  &#x21d2; <tt>Hash</tt> 
   
 
   
@@ -340,7 +364,15 @@ timetables</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Data to JSON-string from XML</p>
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>data wil be converted into Nokogiri::XML and then to hash</p>
+</div>
+  </div>
+
+
+<p>Data to ruby Hash</p>
 
 
   </div>
@@ -354,13 +386,103 @@ timetables</p>
         <span class='name'>data</span>
       
       
-        <span class='type'>(<tt>Nokogiri::XML</tt>)</span>
+        <span class='type'>(<tt>Object</tt>)</span>
       
       
       
         &mdash;
         <div class='inline'><ul><li>
-<p>data in XML</p>
+<p>data of any type, which supported by Nokogiri::XML</p>
+</li></ul>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Data in hash</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+45
+46
+47
+48</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/lib/timetable/loader.rb', line 45</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_hash'>hash</span><span class='lparen'>(</span><span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_xml_data'>xml_data</span> <span class='op'>=</span> <span class='id identifier rubyid_xml'>xml</span><span class='lparen'>(</span><span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_xml_to_hash'>xml_to_hash</span> <span class='id identifier rubyid_xml_data'>xml_data</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="json-instance_method">
+  
+    #<strong>json</strong>(data)  &#x21d2; <tt>String</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>data wil be converted into Nokogiri::XML and then to json</p>
+</div>
+  </div>
+
+
+<p>Data to JSON-string</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>data</span>
+      
+      
+        <span class='type'>(<tt>Object</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><ul><li>
+<p>data of any type, which supported by Nokogiri::XML</p>
 </li></ul>
 </div>
       
@@ -393,19 +515,17 @@ timetables</p>
       <pre class="lines">
 
 
-35
 36
 37
 38
 39</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/lib/timetable/loader.rb', line 35</span>
+      <pre class="code"><span class="info file"># File 'app/lib/timetable/loader.rb', line 36</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_json'>json</span><span class='lparen'>(</span><span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_should_be_instance_of'>should_be_instance_of</span><span class='lparen'>(</span><span class='symbol'>:data</span><span class='comma'>,</span> <span class='id identifier rubyid_data'>data</span><span class='comma'>,</span> <span class='const'>Nokogiri</span><span class='op'>::</span><span class='const'>XML</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_xml_data'>xml_data</span> <span class='op'>=</span> <span class='id identifier rubyid_xml'>xml</span><span class='lparen'>(</span><span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_xml_data_to_json'>xml_data_to_json</span> <span class='id identifier rubyid_xml_data'>xml_data</span>
+  <span class='id identifier rubyid_xml_to_json'>xml_to_json</span> <span class='id identifier rubyid_xml_data'>xml_data</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -503,7 +623,7 @@ timetables</p>
 </div>
 
       <div id="footer">
-  Generated on Sun Nov  4 05:22:50 2018 by
+  Generated on Sun Nov  4 17:15:29 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.16 (ruby-2.5.1).
 </div>

@@ -67,6 +67,7 @@ module Timetable
         initialize_db
       end
 
+      # Drop database copmpletely with system info
       def drop_db
         Mongoid.purge!
       end

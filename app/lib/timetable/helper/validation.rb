@@ -12,7 +12,7 @@ module Timetable
       end
 
       #  Raise error if value.nil?
-      # @param [Object] value - object of any type except Nil
+      # @param [Object] value - object of any of_type except Nil
       def validate(value)
         raise 'Value is nil' if value.nil?
       end
@@ -20,13 +20,14 @@ module Timetable
       #  Raise error if passed value is not instance of passed type
       # @param [String, Symbol] attr_name - name of passed value for message
       # @param [Object] value - value of passed type
-      # @param [Class] type - type, that value should have
-      # @note Type can be even Nil
-      def should_be_instance_of(attr_name, value, type)
-        should_be_instance_of(:class_name, type, Class)
-        unless value.is_a?(type)
+      # @param [Class, Array<Class>] of_type - type or array of types,
+      #  that value should have
+      # @note Type can be een Nil
+      def should_be_instance_of(attr_name, value, of_type)
+        types = [of_type].flatten
+        unless types.any? { |type| value.is_a?(type) }
           raise invalid_instance_message(
-            attr_name, type.name
+            attr_name, of_type.join(', ')
           )
         end
       end
