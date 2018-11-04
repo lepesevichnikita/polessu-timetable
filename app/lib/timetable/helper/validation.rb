@@ -27,19 +27,21 @@ module Timetable
         types = [of_type].flatten
         unless types.any? { |type| value.is_a?(type) }
           raise invalid_instance_message(
-            attr_name, of_type.join(', ')
+            attr_name, types.map(&:name).join(', '), value.class.name
           )
         end
       end
 
       # Build message for should_be_instance_of method
       # @param [String, Symbol] attr_name - name of attribute
-      # @param [String, Symbol] class_name - name of class
+      # @param [String, Symbol, Array<String, Symbol>] excepted_class_name - name of class, that attribut should be 
+      # @param [String, Symbol] actual_class_name - actual class_name of attribute
       # @return [String] text for message
-      def invalid_instance_message(attr_name, class_name)
+      def invalid_instance_message(attr_name, excepted_class_name, actual_class_name)
         validate attr_name
-        validate class_name
-        "#{attr_name} should be an instance of #{class_name}"
+        validate excepted_class_name
+        validate actual_class_name
+        "#{attr_name} should be an instance of #{excepted_class_name}, actual: #{actual_class_name}"
       end
     end
   end

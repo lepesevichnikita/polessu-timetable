@@ -1,7 +1,7 @@
 module Timetable
   module Repository
     # This module provide functionality for repository based on mongodb
-    module Mongoid
+    module MongoidRepository
       include Base
 
       # Reload timetable
@@ -36,7 +36,7 @@ module Timetable
         should_be_instance_of(:block, block, Proc)
         with_session do |session, client|
           session.start_transaction
-          yield session, client
+          block.call session, client
           session.commit_transaction
         end
       end
@@ -58,7 +58,7 @@ module Timetable
         client = Mongoid.client(:default)
         session = client.start_session
         begin
-          yield session, client
+          block.call session, client
           session.end_session
         rescue Mongo::Error => e
           parse_session_error(e, block)

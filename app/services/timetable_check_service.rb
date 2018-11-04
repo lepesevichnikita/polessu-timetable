@@ -27,7 +27,7 @@ module TimetableCheckService
   end
 
   def make_uri
-    URI(Timetable::TIMETABLEtimetable_url)
+    URI(TimetableMongoidRepository.timetable_url)
   end
 
   def last_timetable_datetime_with_zone
