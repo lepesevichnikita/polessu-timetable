@@ -8,21 +8,26 @@ module Timetable
       extend Validation
 
       def xml_data_to_json(xml_data)
-        validate xml_data
+        should_be_instance_of(:xml_data, xml_data, Nokogiri::XML)
+        hash = xml_data_to_hash xml_data
+        hash.to_json
+      end
+
+      def xml_data_to_hash(xml_data)
         should_be_instance_of(:xml_data, xml_data, Nokogiri::XML)
         hash = {}
-        REQUIRED_TYPES.keys.map do |required_type|
+        required_types.keys.map do |required_type|
           hash[key.to_s.pluralize.to_sym] = get_items_of_required_type_from_xml(
             required_type,
             xml_data
           )
         end
-        hash.to_json
+        hash
       end
 
       def get_items_of_required_type_from_xml(required_type, xml_data)
         validate required_type
-        validate xml_data
+        should_be_instance_of(:xml_data, xml_data, Nokogiri::XML)
         should_be_instance_of(:xml_data, xml_data, Nokogiri::XML)
         xml_items_to_array_of_hashes_with_symbolized_keys(
           xml_data.xpath("//#{required_type}")

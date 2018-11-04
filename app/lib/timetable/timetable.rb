@@ -1,19 +1,10 @@
+# This lib contains a module and classess for parsing timetable of PolesSU
+#
+# * {Timetable::Helper} Helpers
+# * {Timetable::Repository} Repository for timetable manipulating
+# * {Timetable::Loader} Module with timetable loading functionality
+#
+# @author Lepesevich Nikita
+#  * {mailto:lepesevich.nikita@yandex.com Email}
 module Timetable
-  TIMETABLE_DEFAULT_URL = 'http://www.polessu.by/ruz/tt.xml'.freeze
-
-  REQUIRED_TYPES =
-    {
-      period: Period,
-      daysdef: Daysdef,
-      weeksdef: Weeksdef,
-      termsdef: Termsdef,
-      subject: Subject,
-      teacher: Teacher,
-      classroom: Classroom,
-      grade: Grade,
-      class: Group, # it is a students group
-      group: Part, # it is a groups part
-      lesson: Lesson,
-      card: Card
-    }.freeze
 end
