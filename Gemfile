@@ -59,3 +59,4 @@ gem 'jquery-rails'
 gem "mongoid", "~> 6.1"
 
 gem "sidekiq", "~> 5.2"
+gem "rspec-rails", "~> 3.8", :groups => [:test, :development]
