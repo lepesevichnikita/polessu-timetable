@@ -1,6 +1,6 @@
 class Api::V1::TeachersController < Api::ApplicationController
   before_action :set_teachers, only: %i[index search]
-  before_action :set_teacher, only: :show
+  before_action :set_teacher, only: %i[show]
 
   private
 
