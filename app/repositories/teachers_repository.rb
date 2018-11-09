@@ -1,5 +1,7 @@
 class TeachersRepository
-  def self.all(query = nil)
+  # Get all teachers if query not passed
+  # @param params [Hash] params for select
+  def self.all(params)
     res = Teacher.all
     res = search(query) if query
     res
