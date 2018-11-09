@@ -8,7 +8,7 @@ class TeachersRepository
   end
 
   def self.find(params)
-    Teacher.find(params[:id])
+    Teacher.find(params[:id]) if params && params[:id]
   end
 
   def self.search(query)
