@@ -1,3 +1,4 @@
+# Repository for working with teachers
 class TeachersRepository
   # Get all teachers if query not passed
   # @param params [Hash] params for select
