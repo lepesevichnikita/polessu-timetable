@@ -4,7 +4,7 @@ class TeachersRepository
   # @param params [Hash] params for select
   def self.all(params)
     res = Teacher.all
-    res = search(query) if query
+    res = search(params[:query]) if params && params[:query]
     res
   end
 
