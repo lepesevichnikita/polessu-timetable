@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :teachers, only: %i[index show] do
         collection do
-          get 'search?:query' => 'teachers#search'
+          get :search
         end
       end
     end
