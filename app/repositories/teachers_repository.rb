@@ -8,6 +8,8 @@ class TeachersRepository
     res
   end
 
+  # Get teacher by params
+  # @param params [Hash] params for teacher getting
   def self.find(params)
     Teacher.find(params[:id]) if params && params[:id]
   end
