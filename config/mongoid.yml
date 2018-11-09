@@ -17,6 +17,6 @@ production:
 test:
   clients:
     default:
-      uri: mongodb://heroku_rmwc66xc:7hjfb8867k6qqgrs5btc1b6cg5@ds141783.mlab.com:41783/heroku_rmwc66xc
+      uri: mongodb://heroku_qtv75ls4:2k6mqkrp50ng5mgm5d10n34nr9@ds255463.mlab.com:55463/heroku_qtv75ls4
       options:
         connect_timeout: 15

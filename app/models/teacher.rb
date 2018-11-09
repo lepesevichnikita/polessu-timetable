@@ -1,5 +1,6 @@
 class Teacher
   include Mongoid::Document
+  include Mongoid::Search
 
   field :name, type: String
   field :short, type: String
@@ -13,4 +14,6 @@ class Teacher
 
   has_many :groups
   has_many :lessons
+
+  search_in :name, :short, :firstname, :lastname
 end
