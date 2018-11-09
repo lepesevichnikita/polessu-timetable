@@ -11,6 +11,8 @@ class TeachersRepository
     Teacher.find(params[:id]) if params && params[:id]
   end
 
+  # Get teachers by full-text-search query
+  # @param query [String] query for searching
   def self.search(query)
     Teacher.full_text_search(query)
   end
