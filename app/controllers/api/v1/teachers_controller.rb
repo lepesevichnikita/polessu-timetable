@@ -5,7 +5,7 @@ class Api::V1::TeachersController < Api::ApplicationController
   private
 
   def set_teachers
-    @teachers = TeachersRepository.all
+    @teachers = TeachersRepository.all(params)
   end
 
   def set_teacher
