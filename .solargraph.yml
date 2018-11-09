@@ -8,12 +8,15 @@ exclude:
 - ".bundle/**/*"
 require:
 - mongoid
-- open/http
 - rails
-- open-uri
 - nokogiri
-- json
 - timetable
+- rspec
+- rspec/helper
+- mongoid-rspec
+- rails_helper
+- factory_bot
+- faker
 domains: []
 reporters:
 - rubocop

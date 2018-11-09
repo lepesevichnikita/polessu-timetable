@@ -18,8 +18,6 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -60,3 +58,16 @@ gem "mongoid", "~> 6.1"
 
 gem "sidekiq", "~> 5.2"
 gem "rspec-rails", "~> 3.8", :groups => [:test, :development]
+
+gem "mongoid-rspec", "~> 4.0", :groups => [:test, :development]
+
+gem "factory_bot_rails", "~> 4.11", :groups => [:test, :development]
+
+gem "faker", "~> 1.9", :groups => [:test, :development]
+
+gem "mongoid_search", "~> 0.3.6"
+
+# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+gem "jbuilder", "~> 2.7"
+
+gem "database_cleaner", "~> 1.7", :groups => [:test, :development]
