@@ -5,12 +5,11 @@ class Api::V1::TeachersController < Api::ApplicationController
   private
 
   def set_teachers
-    @teachers = Teacher.all
-    @teachers = @teachers.full_text_search(params[:query]) if params[:query]
+    @teachers = TeachersRepository.all
   end
 
   def set_teacher
-    @teacher = Teacher.find(params[:id])
+    @teacher = TeachersRepository.find(params)
   end
 
 end
