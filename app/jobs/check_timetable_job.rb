@@ -7,6 +7,8 @@ class CheckTimetableJob < ApplicationJob
     reload_timetable if TimetableCheckService.new_timetable?
   end
 
+  private
+
   def reload_timetable
     TimetableMongoidRepository.reload_timetable
     TimetableFileInfo.first_or_create!(
