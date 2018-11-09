@@ -15,7 +15,7 @@ RSpec.describe Api::V1::TeachersController, type: :request do
     end
   end
 
-  describe 'GET /api/v1/teacher/:id' do
+  describe 'GET /api/v1/teachers/:id' do
     let!(:teacher) { create :teacher }
 
     before { get "/api/v1/teachers/#{teacher.id}" }
@@ -30,6 +30,13 @@ RSpec.describe Api::V1::TeachersController, type: :request do
     end
   end
 
-  describe 'GET /api/v1/teacher/:search?:query' do
+  describe 'GET /api/v1/teachers/:search?:query' do
+    let!(:teachers) { create_list :teacher, 10 }
+
+    before { get "/api/v1/teachers/search?query=#{teachers.first.name}" }
+
+    it 'returns status code 200' do
+      expect(json).not_to be_empty
+    end
   end
 end
