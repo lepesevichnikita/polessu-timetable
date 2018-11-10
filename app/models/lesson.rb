@@ -15,14 +15,9 @@ class Lesson
 
   has_many :cards, foreign_key: :lessonid
 
-  has_and_belongs_to_many :groups, index: true
-  has_and_belongs_to_many :parts, index: true
-  has_and_belongs_to_many :teachers, index: true
-  has_and_belongs_to_many :classrooms, index: true
-
-  setter_alias :classids, :group_ids
-  setter_alias :teacherids, :teacher_ids
-  setter_alias :groupids, :part_ids
-  setter_alias :classroomids, :classroom_ids
+  has_and_belongs_to_many :groups, foreign_key: :classids, index: true
+  has_and_belongs_to_many :parts, foreign_key: :partsids, index: true
+  has_and_belongs_to_many :teachers, foreign_key: :teachersids, index: true
+  has_and_belongs_to_many :classrooms, foreign_key: :classroomids, index: true
 
 end
