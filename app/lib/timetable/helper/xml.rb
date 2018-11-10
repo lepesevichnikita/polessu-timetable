@@ -54,7 +54,6 @@ module Timetable
         validate xml_item
         hash = xml_item.to_h
         rename_key_in_hash hash, 'id', '_id'
-        add_down_line_before_suffix_in_hash_keys hash
         replace_value_in_key_ends_with_ids_to_array hash
         hash.deep_symbolize_keys!
       end
