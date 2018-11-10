@@ -81,12 +81,6 @@ module Timetable
         hash[new_key] = hash.delete(old_key) if hash.key?(old_key)
       end
 
-      def add_down_line_before_suffix_in_hash_keys(hash, suffix = 'ids')
-        hash.keys.each do |key|
-          rename_key_in_hash(hash, key, key.sub(suffix, "_#{suffix}"))
-        end
-      end
-
       def replace_value_in_key_ends_with_ids_to_array(hash)
         hash.keys.each do |key|
           if key.end_with?('ids')
