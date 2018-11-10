@@ -1,3 +1,4 @@
+require 'support/repository_helper'
 class CardsRepository
   extend RepositoryHelper
 
