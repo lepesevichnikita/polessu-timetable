@@ -9,8 +9,7 @@ class Card
 
   belongs_to :lesson, foreign_key: :lessonid, index: true
 
-  has_and_belongs_to_many :classroom, index: true
-
-  setter_alias :classroomids, :classroom_ids
+  has_and_belongs_to_many :classroom, foreign_key: :classroomids, index: true
 
 end
+
