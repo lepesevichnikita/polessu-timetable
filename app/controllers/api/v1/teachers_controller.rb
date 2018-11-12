@@ -9,7 +9,7 @@ class Api::V1::TeachersController < Api::ApplicationController
   end
 
   def set_teacher
-    @teacher = TeachersRepository.find(params)
+    @teacher = TeachersRepository.find_by(params)
   end
 
 end

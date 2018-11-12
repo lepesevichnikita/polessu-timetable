@@ -1,4 +1,4 @@
-module RepositoryHelper
+module CardsRepositoryHelper
   DEFS = {
     weeks: 20,
     days: 6
@@ -7,24 +7,24 @@ module RepositoryHelper
   STUDYING_DAY = 1
   STUDYING_MONTH = 9
 
+  module_function
+
   def this_year
     Date.today.year
   end
 
-  def studying_date
+  def studying_begin_date
     Date.new(this_year, STUDYING_MONTH, STUDYING_DAY)
   end
 
-  def self.weeks_number_from_studying_begin_until_date(date)
-    start_date = studying_date
-    end_date = Date.today
-    weeks_number = weeks_number_between_dates(start_date, end_date)
+  def weeks_number_from_studying_begin_until_date(date)
+    weeks_number_between_dates(studying_begin_date, date)
   end
 
   def number_as_string(offset, defs = :weeks)
-    res = '0' * (offset - 1)
-    res += '1'
-    res += '0' * (DEFS[defs] - offset)
+    left_just_offset = DEFS[defs] - offset
+    right_just_offset = offset - 1
+    res = '1'.rjust(right_just_offset, '0').ljust(left_just_offset, '0')
     res
   end
 

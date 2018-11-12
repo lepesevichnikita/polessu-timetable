@@ -1,11 +1,12 @@
-require 'support/repository_helper'
+require 'support/cards_repository_helper'
+
 class CardsRepository
-  extend RepositoryHelper
+  extend CardsRepositoryHelper
 
   def self.by_day(day)
     by_date(Date.send(day))
   end
-  
+
   def self.by_week(week=nil)
     weeks_number = weeks_number_from_studying_begin_until_date(Date.today)
     weeks_number += 1 if week == :next

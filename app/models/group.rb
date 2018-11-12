@@ -1,6 +1,6 @@
 class Group
   include Mongoid::Document
-  extend MongoidCustomHelper
+  include Mongoid::Search
 
   field :name, type: String
   field :short, type: String
@@ -12,5 +12,7 @@ class Group
 
   has_and_belongs_to_many :classrooms, foreign_key: :classroomsids, index: true
   has_many :parts, foreign_key: :classid
+
+  search_in :name, :short, :grade
 
 end
