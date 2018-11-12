@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Module: Timetable::Default
+  
+    &mdash; Documentation by YARD 0.9.16
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  pathId = "Timetable::Default";
+  relpath = '../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../_index.html">Index (D)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../Timetable.html" title="Timetable (module)">Timetable</a></span></span>
+     &raquo; 
+    <span class="title">Default</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Module: Timetable::Default
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>app/lib/timetable/default.rb</dd>
+  </dl>
+  
+</div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <p>This module contains a constants with default values</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+  
+    <h2>
+      Constant Summary
+      <small><a href="#" class="constants_summary_toggle">collapse</a></small>
+    </h2>
+
+    <dl class="constants">
+      
+        <dt id="ENCODING-constant" class="">ENCODING =
+          <div class="docstring">
+  <div class="discussion">
+    <p>Default encoding for serialization</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>Freezed String with default encoding</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>UTF-8</span><span class='tstring_end'>&#39;</span></span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
+      
+        <dt id="TIMETABLE_URL-constant" class="">TIMETABLE_URL =
+          <div class="docstring">
+  <div class="discussion">
+    <p>Default url of xml with timetable</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>Freezed String with default url of xml with timetable</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>http://www.polessu.by/ruz/tt.xml</span><span class='tstring_end'>&#39;</span></span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
+      
+        <dt id="REQUIRED_TYPES-constant" class="">REQUIRED_TYPES =
+          <div class="docstring">
+  <div class="discussion">
+    <p>Required types of items in xml</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>Freezed Hash with required types</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='lbrace'>{</span>
+  <span class='label'>period:</span> <span class='const'><span class='object_link'><a href="../Period.html" title="Period (class)">Period</a></span></span><span class='comma'>,</span>
+  <span class='label'>daysdef:</span> <span class='const'><span class='object_link'><a href="../Daysdef.html" title="Daysdef (class)">Daysdef</a></span></span><span class='comma'>,</span>
+  <span class='label'>weeksdef:</span> <span class='const'><span class='object_link'><a href="../Weeksdef.html" title="Weeksdef (class)">Weeksdef</a></span></span><span class='comma'>,</span>
+  <span class='label'>termsdef:</span> <span class='const'><span class='object_link'><a href="../Termsdef.html" title="Termsdef (class)">Termsdef</a></span></span><span class='comma'>,</span>
+  <span class='label'>subject:</span> <span class='const'><span class='object_link'><a href="../Subject.html" title="Subject (class)">Subject</a></span></span><span class='comma'>,</span>
+  <span class='label'>teacher:</span> <span class='const'><span class='object_link'><a href="../Teacher.html" title="Teacher (class)">Teacher</a></span></span><span class='comma'>,</span>
+  <span class='label'>classroom:</span> <span class='const'><span class='object_link'><a href="../Classroom.html" title="Classroom (class)">Classroom</a></span></span><span class='comma'>,</span>
+  <span class='label'>grade:</span> <span class='const'><span class='object_link'><a href="../Grade.html" title="Grade (class)">Grade</a></span></span><span class='comma'>,</span>
+  <span class='label'>class:</span> <span class='const'><span class='object_link'><a href="../Group.html" title="Group (class)">Group</a></span></span><span class='comma'>,</span> <span class='comment'># it is a students group
+</span>  <span class='label'>group:</span> <span class='const'><span class='object_link'><a href="../Part.html" title="Part (class)">Part</a></span></span><span class='comma'>,</span> <span class='comment'># it is a groups part
+</span>  <span class='label'>lesson:</span> <span class='const'><span class='object_link'><a href="../Lesson.html" title="Lesson (class)">Lesson</a></span></span><span class='comma'>,</span>
+  <span class='label'>card:</span> <span class='const'><span class='object_link'><a href="../Card.html" title="Card (class)">Card</a></span></span>
+<span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
+      
+        <dt id="TYPE_ALIASES-constant" class="">TYPE_ALIASES =
+          <div class="docstring">
+  <div class="discussion">
+    <p>Type aliases</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Hash&lt;Symbol, Symbol&gt;</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>Hash with types aliases</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='lbrace'>{</span>
+  <span class='label'>class:</span> <span class='symbol'>:group</span><span class='comma'>,</span>
+  <span class='label'>group:</span> <span class='symbol'>:part</span>
+<span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
+      
+    </dl>
+  
+
+
+
+
+
+
+
+
+
+</div>
+
+      <div id="footer">
+  Generated on Mon Nov 12 06:09:19 2018 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.16 (ruby-2.5.1).
+</div>
+
+    </div>
+  </body>
+</html>

@@ -1,6 +1,5 @@
 class Part
   include Mongoid::Document
-  extend MongoidCustomHelper
 
   field :name, type: String
   field :entireclass, type: String

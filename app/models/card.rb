@@ -1,6 +1,5 @@
 class Card
   include Mongoid::Document
-  extend MongoidCustomHelper
 
   field :period, type: String
   field :days, type: String

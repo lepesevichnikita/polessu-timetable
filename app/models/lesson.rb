@@ -1,6 +1,5 @@
 class Lesson
   include Mongoid::Document
-  extend MongoidCustomHelper
 
   field :periodspercard, type: String
   field :periodsperweek, type: String

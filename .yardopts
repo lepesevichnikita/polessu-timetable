@@ -1,0 +1,6 @@
+--plugin rspec
+--plugin rails
+--plugin mongoid
+--markup-provider redcarpet
+--markup markdown
+--output doc

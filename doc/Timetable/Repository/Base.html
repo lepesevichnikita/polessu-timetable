@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Module: Timetable::Repository::Base
+  
+    &mdash; Documentation by YARD 0.9.16
+  
+</title>
+
+  <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  pathId = "Timetable::Repository::Base";
+  relpath = '../../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../../class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../../_index.html">Index (B)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../Timetable.html" title="Timetable (module)">Timetable</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../Repository.html" title="Timetable::Repository (module)">Repository</a></span></span>
+     &raquo; 
+    <span class="title">Base</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../../class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Module: Timetable::Repository::Base
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+
+  
+  
+  
+  
+  <dl>
+      <dt>Includes:</dt>
+      <dd><span class='object_link'><a href="../Helper/Validation.html" title="Timetable::Helper::Validation (module)">Helper::Validation</a></span>, <span class='object_link'><a href="../Helper/XML.html" title="Timetable::Helper::XML (module)">Helper::XML</a></span>, <span class='object_link'><a href="../Loader.html" title="Timetable::Loader (module)">Loader</a></span></dd>
+  </dl>
+  
+  
+
+  
+  <dl>
+    <dt>Included in:</dt>
+    <dd><span class='object_link'><a href="MongoidRepository.html" title="Timetable::Repository::MongoidRepository (module)">MongoidRepository</a></span></dd>
+  </dl>
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>app/lib/timetable/repository/base.rb</dd>
+  </dl>
+  
+</div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <p>This module provide a base functional for timetables repository</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+
+
+  <h2>Instance Attribute Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
+  <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#encoding-instance_method" title="#encoding (instance method)">#<strong>encoding</strong>  &#x21d2; String </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+      <span class="note title readonly">readonly</span>
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>String with encoding type.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#required_types-instance_method" title="#required_types (instance method)">#<strong>required_types</strong>  &#x21d2; Hash&lt;Symbol, Class&gt; </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Hash, that contains types as keys and types classes as values.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#timetable_url-instance_method" title="#timetable_url (instance method)">#<strong>timetable_url</strong>  &#x21d2; String </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>String with url.</p>
+</div></span>
+  
+</li>
+
+    
+  </ul>
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#hash-class_method" title="hash (class method)">.<strong>hash</strong>(data)  &#x21d2; Hash </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Data to ruby Hash.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#json-class_method" title="json (class method)">.<strong>json</strong>(data)  &#x21d2; String </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Data to JSON-string.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#xml-class_method" title="xml (class method)">.<strong>xml</strong>(data)  &#x21d2; Nokogiri::XML </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Data to XML.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="../Helper/Validation.html" title="Timetable::Helper::Validation (module)">Helper::Validation</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="../Helper/Validation.html#invalid_instance_message-class_method" title="Timetable::Helper::Validation.invalid_instance_message (method)">invalid_instance_message</a></span>, <span class='object_link'><a href="../Helper/Validation.html#should_be_instance_of-class_method" title="Timetable::Helper::Validation.should_be_instance_of (method)">should_be_instance_of</a></span>, <span class='object_link'><a href="../Helper/Validation.html#validate-class_method" title="Timetable::Helper::Validation.validate (method)">validate</a></span>, <span class='object_link'><a href="../Helper/Validation.html#validate_attr_in_obj-class_method" title="Timetable::Helper::Validation.validate_attr_in_obj (method)">validate_attr_in_obj</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="../Helper/XML.html" title="Timetable::Helper::XML (module)">Helper::XML</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="../Helper/XML.html#get_items_of_required_type_from_xml-instance_method" title="Timetable::Helper::XML#get_items_of_required_type_from_xml (method)">#get_items_of_required_type_from_xml</a></span>, <span class='object_link'><a href="../Helper/XML.html#rename_key_in_hash-instance_method" title="Timetable::Helper::XML#rename_key_in_hash (method)">#rename_key_in_hash</a></span>, <span class='object_link'><a href="../Helper/XML.html#replace_hash_value_to_new-instance_method" title="Timetable::Helper::XML#replace_hash_value_to_new (method)">#replace_hash_value_to_new</a></span>, <span class='object_link'><a href="../Helper/XML.html#replace_value_in_key_ends_with_ids_to_array-instance_method" title="Timetable::Helper::XML#replace_value_in_key_ends_with_ids_to_array (method)">#replace_value_in_key_ends_with_ids_to_array</a></span>, <span class='object_link'><a href="../Helper/XML.html#xml_item_to_hash_with_deep_symbolized_keys-instance_method" title="Timetable::Helper::XML#xml_item_to_hash_with_deep_symbolized_keys (method)">#xml_item_to_hash_with_deep_symbolized_keys</a></span>, <span class='object_link'><a href="../Helper/XML.html#xml_items_to_array_of_hashes-instance_method" title="Timetable::Helper::XML#xml_items_to_array_of_hashes (method)">#xml_items_to_array_of_hashes</a></span>, <span class='object_link'><a href="../Helper/XML.html#xml_to_hash-instance_method" title="Timetable::Helper::XML#xml_to_hash (method)">#xml_to_hash</a></span>, <span class='object_link'><a href="../Helper/XML.html#xml_to_json-instance_method" title="Timetable::Helper::XML#xml_to_json (method)">#xml_to_json</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="../Loader.html" title="Timetable::Loader (module)">Loader</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="../Loader.html#get_timetable_from-instance_method" title="Timetable::Loader#get_timetable_from (method)">#get_timetable_from</a></span></p>
+
+  <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    
+      
+      <span id=""></span>
+      <div class="method_details first">
+  <h3 class="signature first" id="encoding-instance_method">
+  
+    #<strong>encoding</strong>  &#x21d2; <tt>String</tt>  <span class="extras">(readonly)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Returns String with encoding type</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>String with encoding type</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/lib/timetable/repository/base.rb', line 15</span>
+
+<span class='kw'>module</span> <span class='const'><span class='object_link'><a href="" title="Timetable::Repository::Base (module)">Base</a></span></span>
+  <span class='id identifier rubyid_include'>include</span> <span class='const'><span class='object_link'><a href="../Loader.html" title="Timetable::Loader (module)">Loader</a></span></span>
+  <span class='id identifier rubyid_include'>include</span> <span class='const'><span class='object_link'><a href="../Helper.html" title="Timetable::Helper (module)">Helper</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Helper/XML.html" title="Timetable::Helper::XML (module)">XML</a></span></span>
+  <span class='id identifier rubyid_include'>include</span> <span class='const'><span class='object_link'><a href="../Helper.html" title="Timetable::Helper (module)">Helper</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Helper/Validation.html" title="Timetable::Helper::Validation (module)">Validation</a></span></span>
+
+  <span class='id identifier rubyid_mattr_accessor'>mattr_accessor</span> <span class='symbol'>:timetable_url</span><span class='comma'>,</span> <span class='label'>default:</span> <span class='const'><span class='object_link'><a href="../Default.html" title="Timetable::Default (module)">Default</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Default.html#TIMETABLE_URL-constant" title="Timetable::Default::TIMETABLE_URL (constant)">TIMETABLE_URL</a></span></span>
+  <span class='id identifier rubyid_mattr_accessor'>mattr_accessor</span> <span class='symbol'>:required_types</span><span class='comma'>,</span> <span class='label'>default:</span> <span class='const'><span class='object_link'><a href="../Default.html" title="Timetable::Default (module)">Default</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Default.html#REQUIRED_TYPES-constant" title="Timetable::Default::REQUIRED_TYPES (constant)">REQUIRED_TYPES</a></span></span>
+  <span class='id identifier rubyid_mattr_accessor'>mattr_accessor</span> <span class='symbol'>:encoding</span><span class='comma'>,</span> <span class='label'>default:</span> <span class='const'><span class='object_link'><a href="../Default.html" title="Timetable::Default (module)">Default</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Default.html#ENCODING-constant" title="Timetable::Default::ENCODING (constant)">ENCODING</a></span></span>
+  <span class='id identifier rubyid_mattr_accessor'>mattr_accessor</span> <span class='symbol'>:type_aliases</span><span class='comma'>,</span> <span class='label'>default:</span> <span class='const'><span class='object_link'><a href="../Default.html" title="Timetable::Default (module)">Default</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Default.html#TYPE_ALIASES-constant" title="Timetable::Default::TYPE_ALIASES (constant)">TYPE_ALIASES</a></span></span>
+
+  <span class='comment'># Data to XML
+</span>  <span class='comment'># @param [Object] data - data of any type, which supported by Nokogiri::XML
+</span>  <span class='comment'># @return [Nokogiri::XML] Data in xml
+</span>  <span class='kw'>def</span> <span class='id identifier rubyid_xml'>xml</span><span class='lparen'>(</span><span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_validate'>validate</span> <span class='id identifier rubyid_data'>data</span>
+    <span class='id identifier rubyid_res'>res</span> <span class='op'>=</span> <span class='const'>Nokogiri</span><span class='op'>::</span><span class='const'>XML</span><span class='lparen'>(</span><span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_res'>res</span><span class='period'>.</span><span class='id identifier rubyid_encoding'>encoding</span> <span class='op'>=</span> <span class='id identifier rubyid_encoding'>encoding</span>
+    <span class='id identifier rubyid_res'>res</span>
+  <span class='kw'>end</span>
+
+  <span class='comment'># Data to JSON-string
+</span>  <span class='comment'># @param [Object] data - data of any type, which supported by Nokogiri::XML
+</span>  <span class='comment'># @note data wil be converted into Nokogiri::XML and then to json
+</span>  <span class='comment'># @return [String] Data in JSON
+</span>  <span class='kw'>def</span> <span class='id identifier rubyid_json'>json</span><span class='lparen'>(</span><span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_xml_data'>xml_data</span> <span class='op'>=</span> <span class='id identifier rubyid_xml'>xml</span><span class='lparen'>(</span><span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_xml_to_json'>xml_to_json</span> <span class='id identifier rubyid_xml_data'>xml_data</span>
+  <span class='kw'>end</span>
+
+  <span class='comment'># Data to ruby Hash
+</span>  <span class='comment'># @param [Object] data - data of any type, which supported by Nokogiri::XML
+</span>  <span class='comment'># @note data wil be converted into Nokogiri::XML and then to hash
+</span>  <span class='comment'># @return [Hash] Data in hash
+</span>  <span class='kw'>def</span> <span class='id identifier rubyid_hash'>hash</span><span class='lparen'>(</span><span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_xml_data'>xml_data</span> <span class='op'>=</span> <span class='id identifier rubyid_xml'>xml</span><span class='lparen'>(</span><span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_xml_to_hash'>xml_to_hash</span> <span class='id identifier rubyid_xml_data'>xml_data</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="required_types=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="required_types-instance_method">
+  
+    #<strong>required_types</strong>  &#x21d2; <tt>Hash&lt;Symbol, Class&gt;</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Returns Hash, that contains types as keys and types classes as values</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Hash&lt;Symbol, Class&gt;</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>Hash, that contains types as keys and types classes as values</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/lib/timetable/repository/base.rb', line 15</span>
+
+<span class='kw'>module</span> <span class='const'><span class='object_link'><a href="" title="Timetable::Repository::Base (module)">Base</a></span></span>
+  <span class='id identifier rubyid_include'>include</span> <span class='const'><span class='object_link'><a href="../Loader.html" title="Timetable::Loader (module)">Loader</a></span></span>
+  <span class='id identifier rubyid_include'>include</span> <span class='const'><span class='object_link'><a href="../Helper.html" title="Timetable::Helper (module)">Helper</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Helper/XML.html" title="Timetable::Helper::XML (module)">XML</a></span></span>
+  <span class='id identifier rubyid_include'>include</span> <span class='const'><span class='object_link'><a href="../Helper.html" title="Timetable::Helper (module)">Helper</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Helper/Validation.html" title="Timetable::Helper::Validation (module)">Validation</a></span></span>
+
+  <span class='id identifier rubyid_mattr_accessor'>mattr_accessor</span> <span class='symbol'>:timetable_url</span><span class='comma'>,</span> <span class='label'>default:</span> <span class='const'><span class='object_link'><a href="../Default.html" title="Timetable::Default (module)">Default</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Default.html#TIMETABLE_URL-constant" title="Timetable::Default::TIMETABLE_URL (constant)">TIMETABLE_URL</a></span></span>
+  <span class='id identifier rubyid_mattr_accessor'>mattr_accessor</span> <span class='symbol'>:required_types</span><span class='comma'>,</span> <span class='label'>default:</span> <span class='const'><span class='object_link'><a href="../Default.html" title="Timetable::Default (module)">Default</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Default.html#REQUIRED_TYPES-constant" title="Timetable::Default::REQUIRED_TYPES (constant)">REQUIRED_TYPES</a></span></span>
+  <span class='id identifier rubyid_mattr_accessor'>mattr_accessor</span> <span class='symbol'>:encoding</span><span class='comma'>,</span> <span class='label'>default:</span> <span class='const'><span class='object_link'><a href="../Default.html" title="Timetable::Default (module)">Default</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Default.html#ENCODING-constant" title="Timetable::Default::ENCODING (constant)">ENCODING</a></span></span>
+  <span class='id identifier rubyid_mattr_accessor'>mattr_accessor</span> <span class='symbol'>:type_aliases</span><span class='comma'>,</span> <span class='label'>default:</span> <span class='const'><span class='object_link'><a href="../Default.html" title="Timetable::Default (module)">Default</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Default.html#TYPE_ALIASES-constant" title="Timetable::Default::TYPE_ALIASES (constant)">TYPE_ALIASES</a></span></span>
+
+  <span class='comment'># Data to XML
+</span>  <span class='comment'># @param [Object] data - data of any type, which supported by Nokogiri::XML
+</span>  <span class='comment'># @return [Nokogiri::XML] Data in xml
+</span>  <span class='kw'>def</span> <span class='id identifier rubyid_xml'>xml</span><span class='lparen'>(</span><span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_validate'>validate</span> <span class='id identifier rubyid_data'>data</span>
+    <span class='id identifier rubyid_res'>res</span> <span class='op'>=</span> <span class='const'>Nokogiri</span><span class='op'>::</span><span class='const'>XML</span><span class='lparen'>(</span><span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_res'>res</span><span class='period'>.</span><span class='id identifier rubyid_encoding'>encoding</span> <span class='op'>=</span> <span class='id identifier rubyid_encoding'>encoding</span>
+    <span class='id identifier rubyid_res'>res</span>
+  <span class='kw'>end</span>
+
+  <span class='comment'># Data to JSON-string
+</span>  <span class='comment'># @param [Object] data - data of any type, which supported by Nokogiri::XML
+</span>  <span class='comment'># @note data wil be converted into Nokogiri::XML and then to json
+</span>  <span class='comment'># @return [String] Data in JSON
+</span>  <span class='kw'>def</span> <span class='id identifier rubyid_json'>json</span><span class='lparen'>(</span><span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_xml_data'>xml_data</span> <span class='op'>=</span> <span class='id identifier rubyid_xml'>xml</span><span class='lparen'>(</span><span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_xml_to_json'>xml_to_json</span> <span class='id identifier rubyid_xml_data'>xml_data</span>
+  <span class='kw'>end</span>
+
+  <span class='comment'># Data to ruby Hash
+</span>  <span class='comment'># @param [Object] data - data of any type, which supported by Nokogiri::XML
+</span>  <span class='comment'># @note data wil be converted into Nokogiri::XML and then to hash
+</span>  <span class='comment'># @return [Hash] Data in hash
+</span>  <span class='kw'>def</span> <span class='id identifier rubyid_hash'>hash</span><span class='lparen'>(</span><span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_xml_data'>xml_data</span> <span class='op'>=</span> <span class='id identifier rubyid_xml'>xml</span><span class='lparen'>(</span><span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_xml_to_hash'>xml_to_hash</span> <span class='id identifier rubyid_xml_data'>xml_data</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="timetable_url=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="timetable_url-instance_method">
+  
+    #<strong>timetable_url</strong>  &#x21d2; <tt>String</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Returns String with url</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>String with url</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/lib/timetable/repository/base.rb', line 15</span>
+
+<span class='kw'>module</span> <span class='const'><span class='object_link'><a href="" title="Timetable::Repository::Base (module)">Base</a></span></span>
+  <span class='id identifier rubyid_include'>include</span> <span class='const'><span class='object_link'><a href="../Loader.html" title="Timetable::Loader (module)">Loader</a></span></span>
+  <span class='id identifier rubyid_include'>include</span> <span class='const'><span class='object_link'><a href="../Helper.html" title="Timetable::Helper (module)">Helper</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Helper/XML.html" title="Timetable::Helper::XML (module)">XML</a></span></span>
+  <span class='id identifier rubyid_include'>include</span> <span class='const'><span class='object_link'><a href="../Helper.html" title="Timetable::Helper (module)">Helper</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Helper/Validation.html" title="Timetable::Helper::Validation (module)">Validation</a></span></span>
+
+  <span class='id identifier rubyid_mattr_accessor'>mattr_accessor</span> <span class='symbol'>:timetable_url</span><span class='comma'>,</span> <span class='label'>default:</span> <span class='const'><span class='object_link'><a href="../Default.html" title="Timetable::Default (module)">Default</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Default.html#TIMETABLE_URL-constant" title="Timetable::Default::TIMETABLE_URL (constant)">TIMETABLE_URL</a></span></span>
+  <span class='id identifier rubyid_mattr_accessor'>mattr_accessor</span> <span class='symbol'>:required_types</span><span class='comma'>,</span> <span class='label'>default:</span> <span class='const'><span class='object_link'><a href="../Default.html" title="Timetable::Default (module)">Default</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Default.html#REQUIRED_TYPES-constant" title="Timetable::Default::REQUIRED_TYPES (constant)">REQUIRED_TYPES</a></span></span>
+  <span class='id identifier rubyid_mattr_accessor'>mattr_accessor</span> <span class='symbol'>:encoding</span><span class='comma'>,</span> <span class='label'>default:</span> <span class='const'><span class='object_link'><a href="../Default.html" title="Timetable::Default (module)">Default</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Default.html#ENCODING-constant" title="Timetable::Default::ENCODING (constant)">ENCODING</a></span></span>
+  <span class='id identifier rubyid_mattr_accessor'>mattr_accessor</span> <span class='symbol'>:type_aliases</span><span class='comma'>,</span> <span class='label'>default:</span> <span class='const'><span class='object_link'><a href="../Default.html" title="Timetable::Default (module)">Default</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Default.html#TYPE_ALIASES-constant" title="Timetable::Default::TYPE_ALIASES (constant)">TYPE_ALIASES</a></span></span>
+
+  <span class='comment'># Data to XML
+</span>  <span class='comment'># @param [Object] data - data of any type, which supported by Nokogiri::XML
+</span>  <span class='comment'># @return [Nokogiri::XML] Data in xml
+</span>  <span class='kw'>def</span> <span class='id identifier rubyid_xml'>xml</span><span class='lparen'>(</span><span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_validate'>validate</span> <span class='id identifier rubyid_data'>data</span>
+    <span class='id identifier rubyid_res'>res</span> <span class='op'>=</span> <span class='const'>Nokogiri</span><span class='op'>::</span><span class='const'>XML</span><span class='lparen'>(</span><span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_res'>res</span><span class='period'>.</span><span class='id identifier rubyid_encoding'>encoding</span> <span class='op'>=</span> <span class='id identifier rubyid_encoding'>encoding</span>
+    <span class='id identifier rubyid_res'>res</span>
+  <span class='kw'>end</span>
+
+  <span class='comment'># Data to JSON-string
+</span>  <span class='comment'># @param [Object] data - data of any type, which supported by Nokogiri::XML
+</span>  <span class='comment'># @note data wil be converted into Nokogiri::XML and then to json
+</span>  <span class='comment'># @return [String] Data in JSON
+</span>  <span class='kw'>def</span> <span class='id identifier rubyid_json'>json</span><span class='lparen'>(</span><span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_xml_data'>xml_data</span> <span class='op'>=</span> <span class='id identifier rubyid_xml'>xml</span><span class='lparen'>(</span><span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_xml_to_json'>xml_to_json</span> <span class='id identifier rubyid_xml_data'>xml_data</span>
+  <span class='kw'>end</span>
+
+  <span class='comment'># Data to ruby Hash
+</span>  <span class='comment'># @param [Object] data - data of any type, which supported by Nokogiri::XML
+</span>  <span class='comment'># @note data wil be converted into Nokogiri::XML and then to hash
+</span>  <span class='comment'># @return [Hash] Data in hash
+</span>  <span class='kw'>def</span> <span class='id identifier rubyid_hash'>hash</span><span class='lparen'>(</span><span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_xml_data'>xml_data</span> <span class='op'>=</span> <span class='id identifier rubyid_xml'>xml</span><span class='lparen'>(</span><span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_xml_to_hash'>xml_to_hash</span> <span class='id identifier rubyid_xml_data'>xml_data</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="hash-class_method">
+  
+    .<strong>hash</strong>(data)  &#x21d2; <tt>Hash</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'><p>data wil be converted into Nokogiri::XML and then to hash</p>
+</div>
+  </div>
+
+<p>Data to ruby Hash</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>data</span>
+      
+      
+        <span class='type'>(<tt>Object</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><ul>
+<li>data of any type, which supported by Nokogiri::XML</li>
+</ul>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>Data in hash</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+48
+49
+50
+51</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/lib/timetable/repository/base.rb', line 48</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_hash'>hash</span><span class='lparen'>(</span><span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_xml_data'>xml_data</span> <span class='op'>=</span> <span class='id identifier rubyid_xml'>xml</span><span class='lparen'>(</span><span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_xml_to_hash'>xml_to_hash</span> <span class='id identifier rubyid_xml_data'>xml_data</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="json-class_method">
+  
+    .<strong>json</strong>(data)  &#x21d2; <tt>String</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'><p>data wil be converted into Nokogiri::XML and then to json</p>
+</div>
+  </div>
+
+<p>Data to JSON-string</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>data</span>
+      
+      
+        <span class='type'>(<tt>Object</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><ul>
+<li>data of any type, which supported by Nokogiri::XML</li>
+</ul>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>Data in JSON</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+39
+40
+41
+42</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/lib/timetable/repository/base.rb', line 39</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_json'>json</span><span class='lparen'>(</span><span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_xml_data'>xml_data</span> <span class='op'>=</span> <span class='id identifier rubyid_xml'>xml</span><span class='lparen'>(</span><span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_xml_to_json'>xml_to_json</span> <span class='id identifier rubyid_xml_data'>xml_data</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="xml-class_method">
+  
+    .<strong>xml</strong>(data)  &#x21d2; <tt>Nokogiri::XML</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Data to XML</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>data</span>
+      
+      
+        <span class='type'>(<tt>Object</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><ul>
+<li>data of any type, which supported by Nokogiri::XML</li>
+</ul>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Nokogiri::XML</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>Data in xml</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+28
+29
+30
+31
+32
+33</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/lib/timetable/repository/base.rb', line 28</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_xml'>xml</span><span class='lparen'>(</span><span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_validate'>validate</span> <span class='id identifier rubyid_data'>data</span>
+  <span class='id identifier rubyid_res'>res</span> <span class='op'>=</span> <span class='const'>Nokogiri</span><span class='op'>::</span><span class='const'>XML</span><span class='lparen'>(</span><span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_res'>res</span><span class='period'>.</span><span class='id identifier rubyid_encoding'>encoding</span> <span class='op'>=</span> <span class='id identifier rubyid_encoding'>encoding</span>
+  <span class='id identifier rubyid_res'>res</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Mon Nov 12 06:09:20 2018 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.16 (ruby-2.5.1).
+</div>
+
+    </div>
+  </body>
+</html>
