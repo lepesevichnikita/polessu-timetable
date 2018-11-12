@@ -22,7 +22,7 @@ module CardsRepositoryHelper
   end
 
   def number_as_string(offset, defs = :weeks)
-    left_just_offset = DEFS[defs] - offset
+    left_just_offset = DEFS[defs]
     right_just_offset = offset - 1
     res = '1'.rjust(right_just_offset, '0').ljust(left_just_offset, '0')
     res

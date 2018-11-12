@@ -2,7 +2,7 @@ require 'faker'
 
 FactoryBot.define do
   factory :subject do
-    name { Faker::FunyName.name }
-    short { Faker::FunyName.name }
+    name { Faker::FunnyName.name }
+    short { Faker::FunnyName.name }
   end
 end
