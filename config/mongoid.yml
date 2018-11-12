@@ -17,6 +17,8 @@ production:
 test:
   clients:
     default:
-      uri: mongodb://heroku_qtv75ls4:2k6mqkrp50ng5mgm5d10n34nr9@ds255463.mlab.com:55463/heroku_qtv75ls4
+      database: test
+      hosts:
+        - 127.0.0.1:27017
       options:
         connect_timeout: 15
