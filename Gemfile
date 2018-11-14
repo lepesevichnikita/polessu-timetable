@@ -30,6 +30,17 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+
+  gem "rspec-rails", "~> 3.8"
+
+  gem "mongoid-rspec", "~> 4.0"
+
+  gem "factory_bot_rails", "~> 4.11"
+
+  gem "faker", "~> 1.9"
+
+  gem "database_cleaner", "~> 1.7"
+
 end
 
 group :development do
@@ -54,7 +65,6 @@ group :development do
 
   gem "redcarpet", "~> 3.4"
 
-  gem "github-markup", "~> 3.0"
 end
 
 group :test do
@@ -73,17 +83,7 @@ gem 'jquery-rails'
 gem "mongoid", "~> 6.1"
 
 gem "sidekiq", "~> 5.2"
-gem "rspec-rails", "~> 3.8", :groups => [:test, :development]
-
-gem "mongoid-rspec", "~> 4.0", :groups => [:test, :development]
-
-gem "factory_bot_rails", "~> 4.11", :groups => [:test, :development]
-
-gem "faker", "~> 1.9", :groups => [:test, :development]
-
 gem "mongoid_search", "~> 0.3.6"
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem "jbuilder", "~> 2.7"
-
-gem "database_cleaner", "~> 1.7", :groups => [:test, :development]
