@@ -6,5 +6,6 @@ class Weeksdef
   field :short, type: String
 
   has_many :lessons
+  has_many :cards
 
 end

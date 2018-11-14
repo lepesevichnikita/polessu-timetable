@@ -13,7 +13,6 @@ class Teacher
   field :lastname, type: String
 
   has_many :groups
-  has_many :lessons
 
   search_in :name, :short, :firstname, :lastname
 end

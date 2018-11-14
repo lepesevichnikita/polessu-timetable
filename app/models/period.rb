@@ -6,4 +6,6 @@ class Period
   field :short, type: String
   field :starttime, type: String
   field :endtime, type: String
+
+  has_many :cards
 end

@@ -12,11 +12,10 @@ FactoryBot.define do
     seminargroup { '*' }
 
     after :create do |lesson|
-      groups = create_list(:group, 5)
-      lesson.groups = groups
-      groups.map { |gr| lesson.parts << gr.parts }
-      lesson.teacherids = create_list(:teacher, 3).map(&:id)
-      lesson.classroomids = create_list(:classroom, 3).map(&:id)
+      create_list(:group, 5).each { |group| lesson.groups << group }
+      lesson.groups.each { |gr| lesson.parts << gr.parts }
+      create_list(:teacher, 3).each { |teacher| lesson.teachers << teacher }
+      create_list(:classroom, 3).each { |classroom| lesson.classrooms << classroom }
     end
   end
 end

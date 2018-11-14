@@ -9,7 +9,7 @@ FactoryBot.define do
     lesson
 
     after :create do |card|
-      card.classrooms << create_list(:classrooms, 3)
+      card.classrooms = card.lesson.classrooms
     end
   end
 end
