@@ -32,8 +32,8 @@ module SingleModelRepository
 
     # Get teachers by full-text-search query
     # @param query [String] query for searching
-    def self.search(query)
-      model_name.full_text_search(query)
+    def self.search(query, params={})
+      model_name.where(params).full_text_search(query, relevant_search: true)
     end
   end
 end
