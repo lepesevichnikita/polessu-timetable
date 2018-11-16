@@ -1,4 +1,4 @@
-class Api::V1::GroupsController < ApplicationController
+class Api::V1::GroupsController < Api::ApplicationController
   before_action :set_groups, only: %i[index search]
   before_action :set_group, only: %i[show]
 

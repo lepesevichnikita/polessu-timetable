@@ -12,28 +12,30 @@ module SingleModelRepository
     def self.model_name
       model_name = name.split(MODEL_NAME_SEPARATOR).first
       raise 'Class name should contains Repository' unless model_name
+    end
 
+    def self.model
       model_name.singularize.constantize
     end
 
-    # Get all teachers if query not passed
+    # Get all records if query not passed
     # @param params [Hash] params for select
     def self.all(params)
-      res = model_name.all
+      res = model.all
       res = search(params[:query]) if params && params[:query]
       res
     end
 
-    # Get teacher by params
-    # @param params [Hash] params for teacher getting
+    # Find records by params
+    # @param params [Hash] params for model getting
     def self.find_by(params)
-      model_name.find(params[:id]) if params && params[:id]
+      model.find(params[:id]) if params && params[:id]
     end
 
-    # Get teachers by full-text-search query
+    # Find records by full-text-search query
     # @param query [String] query for searching
     def self.search(query, params={})
-      model_name.full_text_search(query)
+      model.full_text_search(query)
     end
   end
 end

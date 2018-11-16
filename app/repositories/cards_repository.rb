@@ -3,7 +3,12 @@ require 'support/cards_repository_helper'
 class CardsRepository
   extend CardsRepositoryHelper
 
-  def self.by_day(day)
+  def self.by_period_for(model, model_id, period, part)
+    model_in ="#{model}.in".to_sym
+    send("by_#{period}", part).where(model_in => model_id)
+  end
+
+  def self.by_day(day=nil)
     by_date(Date.send(day))
   end
 
