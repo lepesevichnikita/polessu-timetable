@@ -8,12 +8,15 @@ module SingleModelRepository
   class Base
 
     # Return model name, based on repository name
-    #  'Models<Separator>'
+    #  'Models|Separator|'
+    # @return [String] - name of model
     def self.model_name
       model_name = name.split(MODEL_NAME_SEPARATOR).first
       raise 'Class name should contains Repository' unless model_name
     end
 
+    # Return model class if possible
+    # @returns [Class] class of model
     def self.model
       model_name.singularize.constantize
     end

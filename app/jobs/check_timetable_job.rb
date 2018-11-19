@@ -11,7 +11,7 @@ class CheckTimetableJob < ApplicationJob
 
   def reload_timetable
     TimetableMongoidRepository.reload_timetable
-    Rails.applicaion.load_tasks
+    Rails.application.load_tasks
     Rake::Task['mongoid_search:index'].invoke
     TimetableFileInfo.first_or_create!(
       last_modified: TimetableCheckService.last_modified
