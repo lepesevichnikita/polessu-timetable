@@ -3,9 +3,17 @@ require 'faker'
 FactoryBot.define do
   factory :lesson do
     subject
-    daysdef
-    weeksdef
-    termsdef
+
+    before :create do |lesson|
+      num = Faker::Number.between(1, 6)
+      daysdefs = Daysdef.where(days: CardsRepositoryHelper.number_as_string(num.to_i, :days))
+      lesson.daysdef = daysdefs.first || create(:daysdef, short: num)
+
+      num = Faker::Number.between(1, 20)
+      weeksdefs = Weeksdef.where(weeks: CardsRepositoryHelper.number_as_string(num.to_i))
+      lesson.weeksdef = weeksdefs.first || create(:weeksdef, short: num)
+      lesson.termsdef = Termsdef.first || create(:termsdef)
+    end
 
     periodspercard { Faker::Number.decimal(1, 1) }
     periodsperweek { Faker::Number.decimal(1, 1) }

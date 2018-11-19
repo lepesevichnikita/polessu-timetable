@@ -2,7 +2,7 @@ require 'faker'
 
 FactoryBot.define do
   factory :period do
-    number = Faker::Number.between(1, 5)
+    number = Faker::Number.unique.between(1, 5)
     period { number }
     name { "#{number}th lesson" }
     short { "#{number}th" }

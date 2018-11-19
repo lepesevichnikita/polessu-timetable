@@ -7,5 +7,8 @@ class Period
   field :starttime, type: String
   field :endtime, type: String
 
-  has_many :cards
+  has_many :cards, foreign_key: :period, primary_key: :period
+
+  validates_uniqueness_of :period
+  validates_uniqueness_of :short
 end

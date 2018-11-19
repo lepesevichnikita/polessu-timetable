@@ -7,4 +7,6 @@ class Termsdef
 
   has_many :lessons
   has_many :cards
+
+  validates_uniqueness_of :terms
 end

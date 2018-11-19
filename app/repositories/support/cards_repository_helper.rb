@@ -31,8 +31,8 @@ module CardsRepositoryHelper
   def weeks_number_between_dates(start_date, end_date)
     start_date = round_to_prew_week(start_date)
     end_date = round_to_next_week(end_date)
-    days_between = (end_date - start_date).to_i
-    days_between/DEFS[:days]
+    days_between = (end_date - start_date + 1).to_i
+    days_between/7
   end
 
   def days_until_next_week(date)
