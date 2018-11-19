@@ -12,7 +12,8 @@ module SingleModelRepository
     # @return [String] - name of model
     def self.model_name
       model_name = name.split(MODEL_NAME_SEPARATOR).first
-      raise 'Class name should contains Repository' unless model_name
+      raise "Class name should contains #{MODEL_NAME_SEPARATOR}" unless model_name
+      model_name
     end
 
     # Return model class if possible
