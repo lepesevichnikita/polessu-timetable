@@ -23,6 +23,7 @@ module PolessuTimetable
     # -- all .rb files in that directory are automatically loaded.
     config.eager_load_paths << Rails.root.join('lib')
     config.eager_load_paths << Rails.root.join('lib/timetable')
+    config.eager_load_paths << Rails.root.join('lib/helpers')
     config.active_job.queue_adapter = :sidekiq
   end
 end

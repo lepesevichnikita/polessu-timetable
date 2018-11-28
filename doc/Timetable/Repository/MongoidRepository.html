@@ -126,6 +126,29 @@
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#catch_session_error-instance_method" title="#catch_session_error (instance method)">#<strong>catch_session_error</strong>(error, &amp;block)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Parse session error, execute new session with passed block if error is not fatal and raise else.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#client-instance_method" title="#client (instance method)">#<strong>client</strong>(name = :default)  &#x21d2; Object </a>
     
 
@@ -185,7 +208,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'><p>Drop database copmpletely with system info.</p>
+    <span class="summary_desc"><div class='inline'><p>Drop database completely with system info.</p>
 </div></span>
   
 </li>
@@ -240,29 +263,6 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#parse_session_error-instance_method" title="#parse_session_error (instance method)">#<strong>parse_session_error</strong>(error, &amp;block)  &#x21d2; Object </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'><p>Parse session error, execute new session with passed block if error is not fatal and raise else.</p>
-</div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
       <a href="#reinitialize_db-instance_method" title="#reinitialize_db (instance method)">#<strong>reinitialize_db</strong>  &#x21d2; Object </a>
     
 
@@ -302,28 +302,6 @@
   
     <span class="summary_desc"><div class='inline'><p>Reload timetable.</p>
 </div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#unknown_transaction_commit_result_label-instance_method" title="#unknown_transaction_commit_result_label (instance method)">#<strong>unknown_transaction_commit_result_label</strong>(error)  &#x21d2; Object </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'></div></span>
   
 </li>
 
@@ -427,7 +405,99 @@
 
     
       <div class="method_details first">
-  <h3 class="signature first" id="client-instance_method">
+  <h3 class="signature first" id="catch_session_error-instance_method">
+  
+    #<strong>catch_session_error</strong>(error, &amp;block)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Parse session error, execute new session with passed block if error
+is not fatal and raise else</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>error</span>
+      
+      
+        <span class='type'>(<tt>Error</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><ul>
+<li>error from session</li>
+</ul>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>block</span>
+      
+      
+        <span class='type'>(<tt>Proc</tt>, <tt>Block</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><ul>
+<li>block for execution if all is OK</li>
+</ul>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="#with_session-instance_method" title="Timetable::Repository::MongoidRepository#with_session (method)">#with_session</a></span></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+93
+94
+95
+96
+97
+98</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/lib/timetable/repository/mongoid_repository.rb', line 93</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_catch_session_error'>catch_session_error</span><span class='lparen'>(</span><span class='id identifier rubyid_error'>error</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_error'>error</span><span class='period'>.</span><span class='id identifier rubyid_label?'>label?</span><span class='lparen'>(</span><span class='const'>Mongo</span><span class='op'>::</span><span class='const'>Error</span><span class='op'>::</span><span class='const'>UNKNOWN_TRANSACTION_COMMIT_RESULT_LABEL</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_with_session'>with_session</span><span class='lparen'>(</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+  <span class='id identifier rubyid_raise'>raise</span> <span class='id identifier rubyid_error'>error</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="client-instance_method">
   
     #<strong>client</strong>(name = :default)  &#x21d2; <tt>Object</tt> 
   
@@ -448,7 +518,7 @@
     <td>
       <pre class="code"><span class="info file"># File 'app/lib/timetable/repository/mongoid_repository.rb', line 44</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_client'>client</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='op'>=</span><span class='symbol'>:default</span><span class='rparen'>)</span>
+<span class='kw'>def</span> <span class='id identifier rubyid_client'>client</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span> <span class='op'>=</span> <span class='symbol'>:default</span><span class='rparen'>)</span>
   <span class='const'>Mongoid</span><span class='period'>.</span><span class='id identifier rubyid_client'>client</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -511,7 +581,7 @@
   
 </h3><div class="docstring">
   <div class="discussion">
-    <p>Drop database copmpletely with system info</p>
+    <p>Drop database completely with system info</p>
 
 
   </div>
@@ -655,94 +725,6 @@
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="parse_session_error-instance_method">
-  
-    #<strong>parse_session_error</strong>(error, &amp;block)  &#x21d2; <tt>Object</tt> 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    <p>Parse session error, execute new session with passed block if error
-is not fatal and raise else</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  <p class="tag_title">Parameters:</p>
-<ul class="param">
-  
-    <li>
-      
-        <span class='name'>error</span>
-      
-      
-        <span class='type'>(<tt>Error</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'><ul>
-<li>error from session</li>
-</ul>
-</div>
-      
-    </li>
-  
-    <li>
-      
-        <span class='name'>block</span>
-      
-      
-        <span class='type'>(<tt>Proc</tt>, <tt>Block</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'><ul>
-<li>block for execution if all is OK</li>
-</ul>
-</div>
-      
-    </li>
-  
-</ul>
-
-
-  <p class="tag_title">See Also:</p>
-  <ul class="see">
-    
-      <li><span class='object_link'><a href="#with_session-instance_method" title="Timetable::Repository::MongoidRepository#with_session (method)">#with_session</a></span></li>
-    
-  </ul>
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-93
-94
-95
-96</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'app/lib/timetable/repository/mongoid_repository.rb', line 93</span>
-
-<span class='kw'>def</span> <span class='id identifier rubyid_parse_session_error'>parse_session_error</span><span class='lparen'>(</span><span class='id identifier rubyid_error'>error</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_with_session'>with_session</span><span class='lparen'>(</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_unknown_transaction_commit_result_label'>unknown_transaction_commit_result_label</span><span class='lparen'>(</span><span class='id identifier rubyid_error'>error</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_raise'>raise</span> <span class='id identifier rubyid_error'>error</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
   <h3 class="signature " id="reinitialize_db-instance_method">
   
     #<strong>reinitialize_db</strong>  &#x21d2; <tt>Object</tt> 
@@ -847,36 +829,6 @@ is not fatal and raise else</p>
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="unknown_transaction_commit_result_label-instance_method">
-  
-    #<strong>unknown_transaction_commit_result_label</strong>(error)  &#x21d2; <tt>Object</tt> 
-  
-
-  
-
-  
-</h3><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-98
-99
-100</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'app/lib/timetable/repository/mongoid_repository.rb', line 98</span>
-
-<span class='kw'>def</span> <span class='id identifier rubyid_unknown_transaction_commit_result_label'>unknown_transaction_commit_result_label</span><span class='lparen'>(</span><span class='id identifier rubyid_error'>error</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_error'>error</span><span class='period'>.</span><span class='id identifier rubyid_label?'>label?</span><span class='lparen'>(</span><span class='const'>Mongo</span><span class='op'>::</span><span class='const'>Error</span><span class='op'>::</span><span class='const'>UNKNOWN_TRANSACTION_COMMIT_RESULT_LABEL</span><span class='rparen'>)</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
   <h3 class="signature " id="with_session-instance_method">
   
     #<strong>with_session</strong>(&amp;block)  &#x21d2; <tt>Object</tt> 
@@ -958,7 +910,7 @@ end</code></pre>
     <span class='id identifier rubyid_block'>block</span><span class='period'>.</span><span class='id identifier rubyid_call'>call</span> <span class='id identifier rubyid_session'>session</span><span class='comma'>,</span> <span class='id identifier rubyid_client'>client</span>
     <span class='id identifier rubyid_session'>session</span><span class='period'>.</span><span class='id identifier rubyid_end_session'>end_session</span>
   <span class='kw'>rescue</span> <span class='const'>Mongo</span><span class='op'>::</span><span class='const'>Error</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_e'>e</span>
-    <span class='id identifier rubyid_parse_session_error'>parse_session_error</span><span class='lparen'>(</span><span class='id identifier rubyid_e'>e</span><span class='comma'>,</span> <span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_catch_session_error'>catch_session_error</span><span class='lparen'>(</span><span class='id identifier rubyid_e'>e</span><span class='comma'>,</span> <span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
     <span class='id identifier rubyid_session'>session</span><span class='period'>.</span><span class='id identifier rubyid_abort_transaction'>abort_transaction</span>
   <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
@@ -1014,7 +966,7 @@ end</code></pre>
 </div>
 
       <div id="footer">
-  Generated on Mon Nov 12 06:09:20 2018 by
+  Generated on Thu Nov 29 01:10:01 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.16 (ruby-2.5.1).
 </div>

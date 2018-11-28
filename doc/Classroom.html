@@ -113,6 +113,37 @@
 
   
     <h2>
+      Has and belongs to many
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#lessons-instance_method" title="#lessons (instance method)">#<strong>lessons</strong>  &#x21d2; Array&lt;Lesson&gt; </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
       Fields
       <small><a href="#" class="summary_toggle">collapse</a></small>
     </h2>
@@ -415,6 +446,61 @@
       <pre class="code"><span class="info file"># File 'app/models/classroom.rb', line 5</span>
 
 <span class='id identifier rubyid_field'>field</span> <span class='symbol'>:capacity</span><span class='comma'>,</span> <span class='label'>type:</span> <span class='const'>String</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="lessons-instance_method">
+  
+    #<strong>lessons</strong>  &#x21d2; <tt>Array&lt;<span class='object_link'><a href="Lesson.html" title="Lesson (class)">Lesson</a></span>&gt;</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array&lt;<span class='object_link'><a href="Lesson.html" title="Lesson (class)">Lesson</a></span>&gt;</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li>http://mongoid.org/en/mongoid/docs/relations.html#has_and_belongs_to_many</li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+8</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/classroom.rb', line 8</span>
+
+<span class='id identifier rubyid_has_and_belongs_to_many'>has_and_belongs_to_many</span> <span class='symbol'>:lessons</span><span class='comma'>,</span> <span class='label'>foreign_key:</span> <span class='symbol'>:classroomids</span></pre>
     </td>
   </tr>
 </table>
@@ -770,7 +856,7 @@
 </div>
 
       <div id="footer">
-  Generated on Mon Nov 12 06:09:21 2018 by
+  Generated on Thu Nov 29 01:10:04 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.16 (ruby-2.5.1).
 </div>

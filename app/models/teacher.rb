@@ -12,7 +12,8 @@ class Teacher
   field :firstname, type: String
   field :lastname, type: String
 
-  has_many :groups
+  has_many :groups, foreign_key: :teacherid
+  has_and_belongs_to_many :lessons, foreign_key: :teacherids
 
   search_in :name, :short, :firstname, :lastname
 end

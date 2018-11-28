@@ -22,6 +22,10 @@ module SingleModelRepository
       model_name.singularize.constantize
     end
 
+    def self.where(params={})
+      model.where(params)
+    end
+
     # Get all records if query not passed
     # @param params [Hash] params for select
     def self.all(params)

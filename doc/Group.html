@@ -197,6 +197,28 @@
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#lessons-instance_method" title="#lessons (instance method)">#<strong>lessons</strong>  &#x21d2; Array&lt;Lesson&gt; </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#parts-instance_method" title="#parts (instance method)">#<strong>parts</strong>  &#x21d2; Array&lt;Part&gt; </a>
     
 
@@ -379,6 +401,50 @@
 </li>
 
       
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#teacherid-instance_method" title="#teacherid (instance method)">#<strong>teacherid</strong>  &#x21d2; BSON </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#teacherid=-instance_method" title="#teacherid= (instance method)">#<strong>teacherid=</strong>(teacherid)  &#x21d2; BSON </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
     </ul>
   
 
@@ -434,10 +500,10 @@
       <pre class="lines">
 
 
-13</pre>
+15</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/group.rb', line 13</span>
+      <pre class="code"><span class="info file"># File 'app/models/group.rb', line 15</span>
 
 <span class='id identifier rubyid_has_and_belongs_to_many'>has_and_belongs_to_many</span> <span class='symbol'>:classrooms</span><span class='comma'>,</span> <span class='label'>foreign_key:</span> <span class='symbol'>:classroomsids</span><span class='comma'>,</span> <span class='label'>index:</span> <span class='kw'>true</span></pre>
     </td>
@@ -562,6 +628,61 @@
       <pre class="code"><span class="info file"># File 'app/models/group.rb', line 8</span>
 
 <span class='id identifier rubyid_field'>field</span> <span class='symbol'>:grade</span><span class='comma'>,</span> <span class='label'>type:</span> <span class='const'>String</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="lessons-instance_method">
+  
+    #<strong>lessons</strong>  &#x21d2; <tt>Array&lt;<span class='object_link'><a href="Lesson.html" title="Lesson (class)">Lesson</a></span>&gt;</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array&lt;<span class='object_link'><a href="Lesson.html" title="Lesson (class)">Lesson</a></span>&gt;</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li>http://mongoid.org/en/mongoid/docs/relations.html#has_and_belongs_to_many</li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+16</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/group.rb', line 16</span>
+
+<span class='id identifier rubyid_has_and_belongs_to_many'>has_and_belongs_to_many</span> <span class='symbol'>:lessons</span><span class='comma'>,</span> <span class='label'>foreign_key:</span> <span class='symbol'>:classids</span><span class='comma'>,</span> <span class='label'>index:</span> <span class='kw'>true</span></pre>
     </td>
   </tr>
 </table>
@@ -841,10 +962,10 @@
       <pre class="lines">
 
 
-14</pre>
+18</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/group.rb', line 14</span>
+      <pre class="code"><span class="info file"># File 'app/models/group.rb', line 18</span>
 
 <span class='id identifier rubyid_has_many'>has_many</span> <span class='symbol'>:parts</span><span class='comma'>,</span> <span class='label'>foreign_key:</span> <span class='symbol'>:classid</span></pre>
     </td>
@@ -1011,12 +1132,127 @@
       <pre class="lines">
 
 
+12</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/group.rb', line 12</span>
+
+<span class='id identifier rubyid_belongs_to'>belongs_to</span> <span class='symbol'>:teacher</span><span class='comma'>,</span> <span class='label'>foreign_key:</span> <span class='symbol'>:teacherid</span><span class='comma'>,</span> <span class='label'>optional:</span> <span class='kw'>true</span><span class='comma'>,</span> <span class='label'>index:</span> <span class='kw'>true</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="teacherid-instance_method">
+  
+    #<strong>teacherid</strong>  &#x21d2; <tt>BSON</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>BSON</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
 10</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'app/models/group.rb', line 10</span>
 
-<span class='id identifier rubyid_belongs_to'>belongs_to</span> <span class='symbol'>:teacher</span><span class='comma'>,</span> <span class='label'>foreign_key:</span> <span class='symbol'>:teacherid</span><span class='comma'>,</span> <span class='label'>optional:</span> <span class='kw'>true</span><span class='comma'>,</span> <span class='label'>index:</span> <span class='kw'>true</span></pre>
+<span class='id identifier rubyid_field'>field</span> <span class='symbol'>:teacherid</span><span class='comma'>,</span> <span class='label'>type:</span> <span class='const'>BSON</span><span class='op'>::</span><span class='const'>ObjectId</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="teacherid=-instance_method">
+  
+    #<strong>teacherid=</strong>(teacherid)  &#x21d2; <tt>BSON</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>teacherid</span>
+      
+      
+        <span class='type'>(<tt>BSON</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>new teacherid</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>BSON</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+10</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/group.rb', line 10</span>
+
+<span class='id identifier rubyid_field'>field</span> <span class='symbol'>:teacherid</span><span class='comma'>,</span> <span class='label'>type:</span> <span class='const'>BSON</span><span class='op'>::</span><span class='const'>ObjectId</span></pre>
     </td>
   </tr>
 </table>
@@ -1027,7 +1263,7 @@
 </div>
 
       <div id="footer">
-  Generated on Mon Nov 12 06:09:20 2018 by
+  Generated on Thu Nov 29 01:10:02 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.16 (ruby-2.5.1).
 </div>

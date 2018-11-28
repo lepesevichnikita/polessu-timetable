@@ -4,12 +4,10 @@ FactoryBot.define do
   factory :period do
     number = Faker::Number.unique.between(1, 5)
     period { number }
-    name { "#{number}th lesson" }
-    short { "#{number}th" }
+    name { "#{period}th lesson" }
+    short { "#{period}th" }
     time = Time.new(2000, 1, 1, 8, 30, 0)
-    stime = time + (number * 2.hours)
-    etime = stime + 2.hours
-    starttime { stime }
-    endtime { etime }
+    starttime { time + (period * 2.hours) }
+    endtime { starttime + 2.hours }
   end
 end

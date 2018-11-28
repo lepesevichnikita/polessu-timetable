@@ -6,6 +6,9 @@ class Part
   field :divisiontag, type: String
   field :studentcount, type: String
 
+  field :classid, type: BSON::ObjectId
+  field :studentids, type: Array
+
   belongs_to :group, foreign_key: :classid, index: true
   has_and_belongs_to_many :students, foreign_key: :studentids, index: true
 

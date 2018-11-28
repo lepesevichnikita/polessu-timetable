@@ -2,35 +2,55 @@ require 'faker'
 
 FactoryBot.define do
   factory :card do
-    before :create do |card|
-      num = Faker::Number.between(1, 5)
-      periods = Period.where(period: num)
-      card.period = periods.first || create(:period, period: num)
-
-      num = Faker::Number.between(1, 6)
-      daysdefs = Daysdef.where(days: CardsRepositoryHelper.number_as_string(num.to_i, :days))
-      card.days = daysdefs.first.days || create(:daysdef, short: num).days
-
-      num = Faker::Number.between(1, 20)
-      weeksdefs = Weeksdef.where(weeks: CardsRepositoryHelper.number_as_string(num.to_i))
-      card.weeks = weeksdefs.first.weeks || create(:weeksdef, short: num).weeks
-      card.terms = Termsdef.first.terms || create(:termsdef).terms
-    end
     lesson
 
     after :create do |card|
-      card.classrooms = card.lesson.classrooms
+      card.update_attributes(classrooms: card.lesson.classrooms)
     end
 
-    factory :card_today do
+    before :create do |card|
+      period_num = Faker::Number.between(1, 5)
+      attributes = {
+        period: first_or_create(Period, period: period_num,
+                                        short: "#{period_num}th").period,
+        terms: first_or_create(Termsdef).terms
+      }
+      card.set(attributes)
+    end
+
+    trait :random_day do
       before :create do |card|
-        date = Date.today
-        weeks = CardsRepositoryHelper.weeks_number_from_studying_begin_until_date(date)
-        days = CardsRepositoryHelper.number_as_string(date.cwday, :days)
-        weeksdefs = Weeksdef.where(weeks: weeks)
-        daysdefs = Daysdef.where(days: days)
-        card.days = daysdefs.first.days || create(:daysdef, short: date.cwday).days
-        card.weeks = weeksdefs.first.weeks || create(:weeksdef, short: weeks).weeks
+        days_num = Faker::Number.between(1, 6)
+        weeks_num = Faker::Number.between(1, 20)
+        attributes = {
+          daysdef: first_or_create(Daysdef, short: days_num),
+          weeksdef: first_or_create(Weeksdef, short: weeks_num)
+        }
+        card.set(attributes)
+      end
+    end
+
+    trait :today do
+      before :create do |card|
+        update_days_and_weeks_for(card, Date.today)
+      end
+    end
+
+    trait :tomorrow do
+      before :create do |card|
+        update_days_and_weeks_for(card, Date.tomorrow)
+      end
+    end
+
+    trait :this_week do
+      before :create do |card|
+        update_days_and_weeks_for(card, Date.today)
+      end
+    end
+
+    trait :next_week do
+      before :create do |card|
+        update_days_and_weeks_for(card, Date.today + 1.week)
       end
     end
   end

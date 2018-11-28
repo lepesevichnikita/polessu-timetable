@@ -17,6 +17,7 @@ FactoryBot.define do
       create(:part_other_first, group: group)
       create(:part_other_second, group: group)
       create(:part_other_third, group: group)
+      group.update_attributes(classrooms: create_list(:classroom, 10))
     end
   end
 end

@@ -7,6 +7,9 @@ require 'mongoid-rspec'
 require 'support/factory_bot'
 require 'support/request_spec_helper'
 
+require Rails.root.join('app', 'repositories', 'support', 'cards_repository_helper.rb')
+require Rails.root.join('lib', 'helpers', 'factory_helpers.rb')
+
 RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
   config.filter_rails_from_backtrace!

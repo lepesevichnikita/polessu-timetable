@@ -9,6 +9,6 @@ class Student
   field :firstname, type: String
   field :lastname, type: String
 
-  has_and_belongs_to_many :parts
+  has_and_belongs_to_many :parts, foreign_key: :studentid
 
 end

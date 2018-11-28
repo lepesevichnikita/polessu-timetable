@@ -42,8 +42,4 @@ RSpec.describe Api::V1::GroupsController, type: :request do
       expect(json).to_not be_empty
     end
   end
-
-  describe 'GET /api/v1/groups/:id/cards/today' do
-    before { create_list :card_today, 10 }
-  end
 end

@@ -89,7 +89,7 @@
   
   <dl>
       <dt>Includes:</dt>
-      <dd>Mongoid::Document</dd>
+      <dd>Mongoid::Document, Mongoid::Search</dd>
   </dl>
   
   
@@ -287,6 +287,7 @@
 
 
   
+  
 
   <div id="instance_method_details" class="method_details_list">
     <h2>Instance Method Details</h2>
@@ -336,12 +337,12 @@
       <pre class="lines">
 
 
-8</pre>
+9</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/subject.rb', line 8</span>
+      <pre class="code"><span class="info file"># File 'app/models/subject.rb', line 9</span>
 
-<span class='id identifier rubyid_has_many'>has_many</span> <span class='symbol'>:lessons</span></pre>
+<span class='id identifier rubyid_has_many'>has_many</span> <span class='symbol'>:lessons</span><span class='comma'>,</span> <span class='label'>foreign_key:</span> <span class='symbol'>:subjectid</span></pre>
     </td>
   </tr>
 </table>
@@ -384,10 +385,10 @@
       <pre class="lines">
 
 
-4</pre>
+5</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/subject.rb', line 4</span>
+      <pre class="code"><span class="info file"># File 'app/models/subject.rb', line 5</span>
 
 <span class='id identifier rubyid_field'>field</span> <span class='symbol'>:name</span><span class='comma'>,</span> <span class='label'>type:</span> <span class='const'>String</span></pre>
     </td>
@@ -451,10 +452,10 @@
       <pre class="lines">
 
 
-4</pre>
+5</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/subject.rb', line 4</span>
+      <pre class="code"><span class="info file"># File 'app/models/subject.rb', line 5</span>
 
 <span class='id identifier rubyid_field'>field</span> <span class='symbol'>:name</span><span class='comma'>,</span> <span class='label'>type:</span> <span class='const'>String</span></pre>
     </td>
@@ -499,10 +500,10 @@
       <pre class="lines">
 
 
-6</pre>
+7</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/subject.rb', line 6</span>
+      <pre class="code"><span class="info file"># File 'app/models/subject.rb', line 7</span>
 
 <span class='id identifier rubyid_field'>field</span> <span class='symbol'>:partner_id</span><span class='comma'>,</span> <span class='label'>type:</span> <span class='const'>String</span></pre>
     </td>
@@ -566,10 +567,10 @@
       <pre class="lines">
 
 
-6</pre>
+7</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/subject.rb', line 6</span>
+      <pre class="code"><span class="info file"># File 'app/models/subject.rb', line 7</span>
 
 <span class='id identifier rubyid_field'>field</span> <span class='symbol'>:partner_id</span><span class='comma'>,</span> <span class='label'>type:</span> <span class='const'>String</span></pre>
     </td>
@@ -614,10 +615,10 @@
       <pre class="lines">
 
 
-5</pre>
+6</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/subject.rb', line 5</span>
+      <pre class="code"><span class="info file"># File 'app/models/subject.rb', line 6</span>
 
 <span class='id identifier rubyid_field'>field</span> <span class='symbol'>:short</span><span class='comma'>,</span> <span class='label'>type:</span> <span class='const'>String</span></pre>
     </td>
@@ -681,10 +682,10 @@
       <pre class="lines">
 
 
-5</pre>
+6</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/subject.rb', line 5</span>
+      <pre class="code"><span class="info file"># File 'app/models/subject.rb', line 6</span>
 
 <span class='id identifier rubyid_field'>field</span> <span class='symbol'>:short</span><span class='comma'>,</span> <span class='label'>type:</span> <span class='const'>String</span></pre>
     </td>
@@ -697,7 +698,7 @@
 </div>
 
       <div id="footer">
-  Generated on Mon Nov 12 06:09:21 2018 by
+  Generated on Thu Nov 29 01:10:03 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.16 (ruby-2.5.1).
 </div>

@@ -85,11 +85,6 @@
 
   
   
-  <dl>
-      <dt>Extended by:</dt>
-      <dd><span class='object_link'><a href="MongoidCustomHelper.html" title="MongoidCustomHelper (module)">MongoidCustomHelper</a></span></dd>
-  </dl>
-  
   
   
   <dl>
@@ -127,7 +122,95 @@
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#daysdef-instance_method" title="#daysdef (instance method)">#<strong>daysdef</strong>  &#x21d2; Daysdef </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#lesson-instance_method" title="#lesson (instance method)">#<strong>lesson</strong>  &#x21d2; Lesson </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#period-instance_method" title="#period (instance method)">#<strong>period</strong>  &#x21d2; Period </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#termsdef-instance_method" title="#termsdef (instance method)">#<strong>termsdef</strong>  &#x21d2; Termsdef </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#weeksdef-instance_method" title="#weeksdef (instance method)">#<strong>weeksdef</strong>  &#x21d2; Weeksdef </a>
     
 
     
@@ -158,7 +241,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#classroom-instance_method" title="#classroom (instance method)">#<strong>classroom</strong>  &#x21d2; Array&lt;Classroom&gt; </a>
+      <a href="#classrooms-instance_method" title="#classrooms (instance method)">#<strong>classrooms</strong>  &#x21d2; Array&lt;Classroom&gt; </a>
     
 
     
@@ -233,7 +316,29 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#period-instance_method" title="#period (instance method)">#<strong>period</strong>  &#x21d2; String </a>
+      <a href="#lessonid-instance_method" title="#lessonid (instance method)">#<strong>lessonid</strong>  &#x21d2; BSON </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#lessonid=-instance_method" title="#lessonid= (instance method)">#<strong>lessonid=</strong>(lessonid)  &#x21d2; BSON </a>
     
 
     
@@ -367,26 +472,15 @@
 
 
   
-  
-  
-  
-  
-  
-  
-  
-  <h3 class="inherited">Methods included from <span class='object_link'><a href="MongoidCustomHelper.html" title="MongoidCustomHelper (module)">MongoidCustomHelper</a></span></h3>
-  <p class="inherited"><span class='object_link'><a href="MongoidCustomHelper.html#setter_alias-instance_method" title="MongoidCustomHelper#setter_alias (method)">setter_alias</a></span></p>
-
-  
 
   <div id="instance_method_details" class="method_details_list">
     <h2>Instance Method Details</h2>
 
     
       <div class="method_details first">
-  <h3 class="signature first" id="classroom-instance_method">
+  <h3 class="signature first" id="classrooms-instance_method">
   
-    #<strong>classroom</strong>  &#x21d2; <tt>Array&lt;<span class='object_link'><a href="Classroom.html" title="Classroom (class)">Classroom</a></span>&gt;</tt> 
+    #<strong>classrooms</strong>  &#x21d2; <tt>Array&lt;<span class='object_link'><a href="Classroom.html" title="Classroom (class)">Classroom</a></span>&gt;</tt> 
   
 
   
@@ -427,12 +521,12 @@
       <pre class="lines">
 
 
-12</pre>
+18</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/card.rb', line 12</span>
+      <pre class="code"><span class="info file"># File 'app/models/card.rb', line 18</span>
 
-<span class='id identifier rubyid_has_and_belongs_to_many'>has_and_belongs_to_many</span> <span class='symbol'>:classroom</span><span class='comma'>,</span> <span class='label'>foreign_key:</span> <span class='symbol'>:classroomids</span><span class='comma'>,</span> <span class='label'>index:</span> <span class='kw'>true</span></pre>
+<span class='id identifier rubyid_has_and_belongs_to_many'>has_and_belongs_to_many</span> <span class='symbol'>:classrooms</span><span class='comma'>,</span> <span class='label'>foreign_key:</span> <span class='symbol'>:classroomids</span><span class='comma'>,</span> <span class='label'>index:</span> <span class='kw'>true</span></pre>
     </td>
   </tr>
 </table>
@@ -475,10 +569,10 @@
       <pre class="lines">
 
 
-6</pre>
+5</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/card.rb', line 6</span>
+      <pre class="code"><span class="info file"># File 'app/models/card.rb', line 5</span>
 
 <span class='id identifier rubyid_field'>field</span> <span class='symbol'>:days</span><span class='comma'>,</span> <span class='label'>type:</span> <span class='const'>String</span></pre>
     </td>
@@ -542,12 +636,67 @@
       <pre class="lines">
 
 
-6</pre>
+5</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/card.rb', line 6</span>
+      <pre class="code"><span class="info file"># File 'app/models/card.rb', line 5</span>
 
 <span class='id identifier rubyid_field'>field</span> <span class='symbol'>:days</span><span class='comma'>,</span> <span class='label'>type:</span> <span class='const'>String</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="daysdef-instance_method">
+  
+    #<strong>daysdef</strong>  &#x21d2; <tt><span class='object_link'><a href="Daysdef.html" title="Daysdef (class)">Daysdef</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Daysdef.html" title="Daysdef (class)">Daysdef</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li>http://mongoid.org/en/mongoid/docs/relations.html#belongs_to</li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+12</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/card.rb', line 12</span>
+
+<span class='id identifier rubyid_belongs_to'>belongs_to</span> <span class='symbol'>:daysdef</span><span class='comma'>,</span> <span class='label'>foreign_key:</span> <span class='symbol'>:days</span><span class='comma'>,</span> <span class='label'>primary_key:</span> <span class='symbol'>:days</span></pre>
     </td>
   </tr>
 </table>
@@ -597,10 +746,10 @@
       <pre class="lines">
 
 
-10</pre>
+16</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/card.rb', line 10</span>
+      <pre class="code"><span class="info file"># File 'app/models/card.rb', line 16</span>
 
 <span class='id identifier rubyid_belongs_to'>belongs_to</span> <span class='symbol'>:lesson</span><span class='comma'>,</span> <span class='label'>foreign_key:</span> <span class='symbol'>:lessonid</span><span class='comma'>,</span> <span class='label'>index:</span> <span class='kw'>true</span></pre>
     </td>
@@ -609,9 +758,9 @@
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="period-instance_method">
+  <h3 class="signature " id="lessonid-instance_method">
   
-    #<strong>period</strong>  &#x21d2; <tt>String</tt> 
+    #<strong>lessonid</strong>  &#x21d2; <tt>BSON</tt> 
   
 
   
@@ -631,7 +780,7 @@
     <li>
       
       
-        <span class='type'>(<tt>String</tt>)</span>
+        <span class='type'>(<tt>BSON</tt>)</span>
       
       
       
@@ -645,10 +794,132 @@
       <pre class="lines">
 
 
-5</pre>
+9</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/card.rb', line 5</span>
+      <pre class="code"><span class="info file"># File 'app/models/card.rb', line 9</span>
+
+<span class='id identifier rubyid_field'>field</span> <span class='symbol'>:lessonid</span><span class='comma'>,</span> <span class='label'>type:</span> <span class='const'>BSON</span><span class='op'>::</span><span class='const'>ObjectId</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="lessonid=-instance_method">
+  
+    #<strong>lessonid=</strong>(lessonid)  &#x21d2; <tt>BSON</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>lessonid</span>
+      
+      
+        <span class='type'>(<tt>BSON</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>new lessonid</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>BSON</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+9</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/card.rb', line 9</span>
+
+<span class='id identifier rubyid_field'>field</span> <span class='symbol'>:lessonid</span><span class='comma'>,</span> <span class='label'>type:</span> <span class='const'>BSON</span><span class='op'>::</span><span class='const'>ObjectId</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="period-instance_method">
+  
+    #<strong>period</strong>  &#x21d2; <tt><span class='object_link'><a href="Period.html" title="Period (class)">Period</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Period.html" title="Period (class)">Period</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li>http://mongoid.org/en/mongoid/docs/relations.html#belongs_to</li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+4</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/card.rb', line 4</span>
 
 <span class='id identifier rubyid_field'>field</span> <span class='symbol'>:period</span><span class='comma'>,</span> <span class='label'>type:</span> <span class='const'>String</span></pre>
     </td>
@@ -712,10 +983,10 @@
       <pre class="lines">
 
 
-5</pre>
+4</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/card.rb', line 5</span>
+      <pre class="code"><span class="info file"># File 'app/models/card.rb', line 4</span>
 
 <span class='id identifier rubyid_field'>field</span> <span class='symbol'>:period</span><span class='comma'>,</span> <span class='label'>type:</span> <span class='const'>String</span></pre>
     </td>
@@ -760,10 +1031,10 @@
       <pre class="lines">
 
 
-8</pre>
+7</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/card.rb', line 8</span>
+      <pre class="code"><span class="info file"># File 'app/models/card.rb', line 7</span>
 
 <span class='id identifier rubyid_field'>field</span> <span class='symbol'>:terms</span><span class='comma'>,</span> <span class='label'>type:</span> <span class='const'>String</span></pre>
     </td>
@@ -827,12 +1098,67 @@
       <pre class="lines">
 
 
-8</pre>
+7</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/card.rb', line 8</span>
+      <pre class="code"><span class="info file"># File 'app/models/card.rb', line 7</span>
 
 <span class='id identifier rubyid_field'>field</span> <span class='symbol'>:terms</span><span class='comma'>,</span> <span class='label'>type:</span> <span class='const'>String</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="termsdef-instance_method">
+  
+    #<strong>termsdef</strong>  &#x21d2; <tt><span class='object_link'><a href="Termsdef.html" title="Termsdef (class)">Termsdef</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Termsdef.html" title="Termsdef (class)">Termsdef</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li>http://mongoid.org/en/mongoid/docs/relations.html#belongs_to</li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+14</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/card.rb', line 14</span>
+
+<span class='id identifier rubyid_belongs_to'>belongs_to</span> <span class='symbol'>:termsdef</span><span class='comma'>,</span> <span class='label'>foreign_key:</span> <span class='symbol'>:terms</span><span class='comma'>,</span> <span class='label'>primary_key:</span> <span class='symbol'>:terms</span><span class='comma'>,</span> <span class='label'>optional:</span> <span class='kw'>true</span></pre>
     </td>
   </tr>
 </table>
@@ -875,10 +1201,10 @@
       <pre class="lines">
 
 
-7</pre>
+6</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/card.rb', line 7</span>
+      <pre class="code"><span class="info file"># File 'app/models/card.rb', line 6</span>
 
 <span class='id identifier rubyid_field'>field</span> <span class='symbol'>:weeks</span><span class='comma'>,</span> <span class='label'>type:</span> <span class='const'>String</span></pre>
     </td>
@@ -942,12 +1268,67 @@
       <pre class="lines">
 
 
-7</pre>
+6</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/card.rb', line 7</span>
+      <pre class="code"><span class="info file"># File 'app/models/card.rb', line 6</span>
 
 <span class='id identifier rubyid_field'>field</span> <span class='symbol'>:weeks</span><span class='comma'>,</span> <span class='label'>type:</span> <span class='const'>String</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="weeksdef-instance_method">
+  
+    #<strong>weeksdef</strong>  &#x21d2; <tt><span class='object_link'><a href="Weeksdef.html" title="Weeksdef (class)">Weeksdef</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Weeksdef.html" title="Weeksdef (class)">Weeksdef</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li>http://mongoid.org/en/mongoid/docs/relations.html#belongs_to</li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+13</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/card.rb', line 13</span>
+
+<span class='id identifier rubyid_belongs_to'>belongs_to</span> <span class='symbol'>:weeksdef</span><span class='comma'>,</span> <span class='label'>foreign_key:</span> <span class='symbol'>:weeks</span><span class='comma'>,</span> <span class='label'>primary_key:</span> <span class='symbol'>:weeks</span></pre>
     </td>
   </tr>
 </table>
@@ -958,7 +1339,7 @@
 </div>
 
       <div id="footer">
-  Generated on Mon Nov 12 06:09:20 2018 by
+  Generated on Thu Nov 29 01:10:02 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.16 (ruby-2.5.1).
 </div>

@@ -7,6 +7,17 @@ class Lesson
   field :capacity, type: String
   field :partner_id, type: String
 
+  field :subjectid, type: BSON::ObjectId
+  field :daysdefid, type: BSON::ObjectId
+  field :weeksdefid, type: BSON::ObjectId
+  field :termsdefid, type: BSON::ObjectId
+
+  field :classids, type: Array
+  field :partids, type: Array
+  field :teacherids, type: Array
+  field :classroomids, type: Array
+
+
   belongs_to :subject, foreign_key: :subjectid, index: true
   belongs_to :daysdef, foreign_key: :daysdefid, index: true
   belongs_to :weeksdef, foreign_key: :weeksdefid, index: true

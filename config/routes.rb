@@ -11,12 +11,6 @@ Rails.application.routes.draw do
           get :search
         end
         resources :cards, only: %i[index], shallow: true do
-          collection do
-            get :today
-            get :tomorrow
-            get :this_week
-            get :next_week
-          end
         end
       end
 

@@ -41,7 +41,7 @@ module Timetable
         end
       end
 
-      def client(name=:default)
+      def client(name = :default)
         Mongoid.client(name)
       end
 
@@ -61,7 +61,7 @@ module Timetable
           block.call session, client
           session.end_session
         rescue Mongo::Error => e
-          parse_session_error(e, block)
+          catch_session_error(e, block)
           session.abort_transaction
         end
       end
@@ -80,7 +80,7 @@ module Timetable
         initialize_db
       end
 
-      # Drop database copmpletely with system info
+      # Drop database completely with system info
       def drop_db
         Mongoid.purge!
       end
@@ -90,13 +90,11 @@ module Timetable
       # @param [Error] error - error from session
       # @param [Proc, Block] block - block for execution if all is OK
       # @see #with_session
-      def parse_session_error(error, &block)
-        with_session(block) if unknown_transaction_commit_result_label(error)
+      def catch_session_error(error, &block)
+        if error.label?(Mongo::Error::UNKNOWN_TRANSACTION_COMMIT_RESULT_LABEL)
+          with_session(block)
+        end
         raise error
-      end
-
-      def unknown_transaction_commit_result_label(error)
-        error.label?(Mongo::Error::UNKNOWN_TRANSACTION_COMMIT_RESULT_LABEL)
       end
     end
   end
