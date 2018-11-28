@@ -37,6 +37,9 @@ module CardsRepositoryHelper
   #  # 001000
   def number_as_string(offset, defs = :weeks, marker = '1', mask = '0')
     left_offset = DEFS[defs]
+    # !!!!!!!!!!!КОСТЫЛЬ!!!!!!!!!!!
+    # В этом году первая неделя - 2я, поэтому смещение на -1
+    # TODO фикс костыля
     offset -= 1 if defs == :weeks
     right_offset = offset >= 0 ? offset : left_offset
     mask = marker unless offset.positive?
