@@ -38,7 +38,7 @@ module CardsRepositoryHelper
   def number_as_string(offset, defs = :weeks, marker = '1', mask = '0')
     left_offset = DEFS[defs]
     offset -= 1 if defs == :weeks
-    right_offset = offset.positive? ? offset : left_offset
+    right_offset = offset >= 0 ? offset : left_offset
     mask = marker unless offset.positive?
     marker.rjust(right_offset, mask).ljust(left_offset, mask)
   end
