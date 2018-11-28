@@ -6,10 +6,10 @@ RSpec.describe Api::V1::CardsController, type: :request do
     before do
       create_list :card, CARDS_NUMBER, :today
       get api_v1_group_cards_path(
-              group_id: Group.first.id,
-              definition: :day,
-              period: :today
-          )
+        group_id: Group.first.id,
+        definition: :day,
+        period: :today
+      )
     end
 
     it 'returns 200 https status' do
@@ -25,10 +25,10 @@ RSpec.describe Api::V1::CardsController, type: :request do
     before do
       create_list :card, CARDS_NUMBER, :tomorrow
       get api_v1_group_cards_path(
-              group_id: Group.first.id,
-              definition: :day,
-              period: :tomorrow
-          )
+        group_id: Group.first.id,
+        definition: :day,
+        period: :tomorrow
+      )
     end
 
     it 'returns 200 https status' do
@@ -38,17 +38,16 @@ RSpec.describe Api::V1::CardsController, type: :request do
     it 'contains cards' do
       expect(json).to_not be_empty
     end
-
   end
 
   describe 'GET /api/v1/groups/:id/cards/this_week' do
     before do
       create_list :card, CARDS_NUMBER, :this_week
       get api_v1_group_cards_path(
-              group_id: Group.first.id,
-              definition: :week,
-              period: :this
-          )
+        group_id: Group.first.id,
+        definition: :week,
+        period: :this
+      )
     end
 
     it 'returns 200 https status' do
@@ -64,10 +63,10 @@ RSpec.describe Api::V1::CardsController, type: :request do
     before do
       create_list :card, CARDS_NUMBER, :next_week
       get api_v1_group_cards_path(
-              group_id: Group.first.id,
-              definition: :week,
-              period: :next
-          )
+        group_id: Group.first.id,
+        definition: :week,
+        period: :next
+      )
     end
 
     it 'returns 200 https status' do
@@ -83,10 +82,10 @@ RSpec.describe Api::V1::CardsController, type: :request do
     before do
       create_list :card, CARDS_NUMBER, :today
       get api_v1_teacher_cards_path(
-              teacher_id: Teacher.first.id,
-              definition: :day,
-              period: :today
-          )
+        teacher_id: Teacher.first.id,
+        definition: :day,
+        period: :today
+      )
     end
 
     it 'returns 200 https status' do
@@ -102,10 +101,10 @@ RSpec.describe Api::V1::CardsController, type: :request do
     before do
       create_list :card, CARDS_NUMBER, :tomorrow
       get api_v1_teacher_cards_path(
-              teacher_id: Teacher.first.id,
-              definition: :day,
-              period: :tomorrow
-          )
+        teacher_id: Teacher.first.id,
+        definition: :day,
+        period: :tomorrow
+      )
     end
 
     it 'returns 200 https status' do
@@ -121,10 +120,10 @@ RSpec.describe Api::V1::CardsController, type: :request do
     before do
       create_list :card, CARDS_NUMBER, :this_week
       get api_v1_teacher_cards_path(
-              teacher_id: Teacher.first.id,
-              definition: :week,
-              period: :this
-          )
+        teacher_id: Teacher.first.id,
+        definition: :week,
+        period: :this
+      )
     end
 
     it 'returns 200 https status' do
@@ -140,10 +139,10 @@ RSpec.describe Api::V1::CardsController, type: :request do
     before do
       create_list :card, CARDS_NUMBER, :next_week
       get api_v1_teacher_cards_path(
-              teacher_id: Teacher.first.id,
-              definition: :week,
-              period: :next
-          )
+        teacher_id: Teacher.first.id,
+        definition: :week,
+        period: :next
+      )
     end
 
     it 'returns 200 https status' do
