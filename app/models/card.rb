@@ -17,4 +17,8 @@ class Card
 
   has_and_belongs_to_many :classrooms, foreign_key: :classroomids, index: true
 
+  default_scope -> {
+                  includes(:period, :lesson, :daysdef, :weeksdef,
+                           :classrooms)
+                }
 end
