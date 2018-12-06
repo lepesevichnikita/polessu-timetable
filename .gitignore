@@ -18,3 +18,4 @@ tags*
 .vscode
 .yardoc
 *.sock
+log
