@@ -6,7 +6,7 @@ class CardsRepository < MongoidDocumentRepository::Base
 
   # Returns cards by lessons at period of definition
   # @param [Array, Mongoid::Criteria] lessons Lessons of cards
-  # @param [Symbol, String] period Period of definition
+  # @param [Symbol, String] period Phase of definition
   # @param [Symbol, String] definition Definition for period
   # @return [Mongoid::Criteria] Result of search
   def self.get_by_lessons(lessons, period = :today, definition = :day)
