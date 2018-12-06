@@ -13,7 +13,7 @@ module Timetable
     # @return [Hash] Freezed Hash with required types
     REQUIRED_TYPES =
       {
-        period: Period,
+        period: Phase,
         daysdef: Daysdef,
         weeksdef: Weeksdef,
         termsdef: Termsdef,
@@ -32,7 +32,8 @@ module Timetable
     TYPE_ALIASES =
       {
         class: :group,
-        group: :part
+        group: :part,
+        period: :phase
       }.freeze
   end
 end

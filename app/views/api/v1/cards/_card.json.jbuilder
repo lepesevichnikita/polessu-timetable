@@ -1,6 +1,6 @@
-if card.period
-  json.period card.period.number
-  json.time "#{card.period.starttime}-#{card.period.endtime}"
+if card.phase
+  json.phase card.phase.period
+  json.time "#{card.phase.starttime}-#{card.phase.endtime}"
 end
 json.subject card.lesson.subject.name
 json.classroom card.classrooms.first.short if card.classrooms.count.positive?
