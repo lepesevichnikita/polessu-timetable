@@ -63,7 +63,7 @@ module Timetable
       # @param key [String, Symbol] Key of hashes value
       # @yield [value] value of hash by key to the block
       # @yieldparam value [Object] Value of hash by key
-      # @yieldreturn [Object] processed value
+      # @yieldreturn [Object] Processed value
       def replace_hash_value_to_new(hash, key, &block)
         should_be_instance_of(:key, key, [String, Symbol])
         should_be_instance_of(:hash, hash, Hash)
