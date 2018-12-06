@@ -87,3 +87,5 @@ gem 'sidekiq', '~> 5.2'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
+
+gem "zeus", "~> 0.15.14"

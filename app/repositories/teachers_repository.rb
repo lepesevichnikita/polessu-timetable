@@ -1,3 +1,3 @@
 # Repository for working with teachers
-class TeachersRepository < SingleModelRepository::Base
+class TeachersRepository < MongoidDocumentRepository::Base
 end
