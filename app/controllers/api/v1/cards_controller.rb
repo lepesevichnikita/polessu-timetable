@@ -1,6 +1,6 @@
 class Api::V1::CardsController < Api::ApplicationController
-  before_action :set_lessons
   before_action :permit_params
+  before_action :set_lessons
 
   def index
     definition = params['definition']
