@@ -11,9 +11,9 @@ FactoryBot.define do
     before :create do |card|
       period_num = Faker::Number.between(1, 5)
       attributes = {
-        period: first_or_create(Period, period: period_num,
-                                        short: "#{period_num}th").period,
-        terms: first_or_create(Termsdef).terms
+          number: first_or_create(Period, period: period_num,
+                                  short: "#{period_num}th").number,
+          terms: first_or_create(Termsdef).terms
       }
       card.set(attributes)
     end

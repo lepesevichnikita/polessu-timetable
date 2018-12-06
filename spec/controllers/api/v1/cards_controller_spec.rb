@@ -1,10 +1,15 @@
 require 'rails_helper'
 
+COUNT = {
+    cards: 10
+}.freeze
+
 RSpec.describe Api::V1::CardsController, type: :request do
-  CARDS_NUMBER = 10
+
   describe 'GET /api/v1/groups/:id/cards/today' do
-    before do
-      create_list :card, CARDS_NUMBER, :today
+    before :all do
+      FactoryBot.create_list :card, COUNT[:cards], :today
+
       get api_v1_group_cards_path(
         group_id: Group.first.id,
         definition: :day,
@@ -22,8 +27,8 @@ RSpec.describe Api::V1::CardsController, type: :request do
   end
 
   describe 'GET /api/v1/groups/:id/cards/tomorrow' do
-    before do
-      create_list :card, CARDS_NUMBER, :tomorrow
+    before :all do
+      create_list :card, COUNT[:cards], :tomorrow
       get api_v1_group_cards_path(
         group_id: Group.first.id,
         definition: :day,
@@ -41,8 +46,8 @@ RSpec.describe Api::V1::CardsController, type: :request do
   end
 
   describe 'GET /api/v1/groups/:id/cards/this_week' do
-    before do
-      create_list :card, CARDS_NUMBER, :this_week
+    before :all do
+      create_list :card, COUNT[:cards], :this_week
       get api_v1_group_cards_path(
         group_id: Group.first.id,
         definition: :week,
@@ -60,8 +65,8 @@ RSpec.describe Api::V1::CardsController, type: :request do
   end
 
   describe 'GET /api/v1/groups/:id/cards/next_week' do
-    before do
-      create_list :card, CARDS_NUMBER, :next_week
+    before :all do
+      create_list :card, COUNT[:cards], :next_week
       get api_v1_group_cards_path(
         group_id: Group.first.id,
         definition: :week,
@@ -79,8 +84,8 @@ RSpec.describe Api::V1::CardsController, type: :request do
   end
 
   describe 'GET /api/v1/teachers/:id/cards/today' do
-    before do
-      create_list :card, CARDS_NUMBER, :today
+    before :all do
+      create_list :card, COUNT[:cards], :today
       get api_v1_teacher_cards_path(
         teacher_id: Teacher.first.id,
         definition: :day,
@@ -98,8 +103,8 @@ RSpec.describe Api::V1::CardsController, type: :request do
   end
 
   describe 'GET /api/v1/teachers/:id/cards/tomorrow' do
-    before do
-      create_list :card, CARDS_NUMBER, :tomorrow
+    before :all do
+      create_list :card, COUNT[:cards], :tomorrow
       get api_v1_teacher_cards_path(
         teacher_id: Teacher.first.id,
         definition: :day,
@@ -117,8 +122,8 @@ RSpec.describe Api::V1::CardsController, type: :request do
   end
 
   describe 'GET /api/v1/teachers/:id/cards/this_week' do
-    before do
-      create_list :card, CARDS_NUMBER, :this_week
+    before :all do
+      create_list :card, COUNT[:cards], :this_week
       get api_v1_teacher_cards_path(
         teacher_id: Teacher.first.id,
         definition: :week,
@@ -136,8 +141,8 @@ RSpec.describe Api::V1::CardsController, type: :request do
   end
 
   describe 'GET /api/v1/teachers/:id/cards/next_week' do
-    before do
-      create_list :card, CARDS_NUMBER, :next_week
+    before :all do
+      create_list :card, COUNT[:cards], :next_week
       get api_v1_teacher_cards_path(
         teacher_id: Teacher.first.id,
         definition: :week,

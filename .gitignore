@@ -7,15 +7,15 @@
 # Ignore bundler config.
 # Ignore the default SQLite database.
 # Ignore all logfiles and tempfiles.
-/log/*
 /tmp/*
-!/log/.keep
 !/tmp/.keep
 
 # Ignore uploaded files in development
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 tags*
-.idea/*
-.yardoc
+.idea
 .vscode
+.yardoc
+*.sock
+log

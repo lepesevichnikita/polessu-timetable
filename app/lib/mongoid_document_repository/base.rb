@@ -1,6 +1,6 @@
 require 'active_support'
 
-module SingleModelRepository
+module MongoidDocumentRepository
   MODEL_NAME_SEPARATOR = 'Repository'.freeze
 
   # Base class for repository, that should provide functional
@@ -8,7 +8,10 @@ module SingleModelRepository
   class Base
 
     # Return model name, based on repository name
-    #  'Models|Separator|'
+    # @example
+    #  # MODEL_NAME_SEPARATOR = 'Repository'
+    #  class ApplesRepository
+    #  end
     # @return [String] - name of model
     def self.model_name
       model_name = name.split(MODEL_NAME_SEPARATOR).first
