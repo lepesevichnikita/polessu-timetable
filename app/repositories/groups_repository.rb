@@ -1,3 +1,3 @@
-class GroupsRepository < SingleModelRepository::Base
+class GroupsRepository < MongoidDocumentRepository::Base
 
 end
