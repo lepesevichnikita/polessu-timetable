@@ -5,7 +5,6 @@ module CardsRepositoryHelper
   }.freeze
 
   DAYS_PER_WEEK = 7
-
   STUDYING_DAY = 1
   STUDYING_MONTH = 9
 
