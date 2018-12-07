@@ -397,12 +397,12 @@
       <pre class="lines">
 
 
-57
-58
-59</pre>
+60
+61
+62</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/repositories/support/cards_repository_helper.rb', line 57</span>
+      <pre class="code"><span class="info file"># File 'app/repositories/support/cards_repository_helper.rb', line 60</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_days_until_next_week'>days_until_next_week</span><span class='lparen'>(</span><span class='id identifier rubyid_date'>date</span><span class='rparen'>)</span>
   <span class='const'><span class='object_link'><a href="#DAYS_PER_WEEK-constant" title="CardsRepositoryHelper::DAYS_PER_WEEK (constant)">DAYS_PER_WEEK</a></span></span> <span class='op'>-</span> <span class='id identifier rubyid_date'>date</span><span class='period'>.</span><span class='id identifier rubyid_cwday'>cwday</span>
@@ -545,19 +545,27 @@ as marker at defined position and other symbols are mask</li>
       <pre class="lines">
 
 
+37
 38
 39
 40
 41
 42
-43</pre>
+43
+44
+45
+46</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/repositories/support/cards_repository_helper.rb', line 38</span>
+      <pre class="code"><span class="info file"># File 'app/repositories/support/cards_repository_helper.rb', line 37</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_number_as_string'>number_as_string</span><span class='lparen'>(</span><span class='id identifier rubyid_offset'>offset</span><span class='comma'>,</span> <span class='id identifier rubyid_defs'>defs</span> <span class='op'>=</span> <span class='symbol'>:weeks</span><span class='comma'>,</span> <span class='id identifier rubyid_marker'>marker</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>1</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_mask'>mask</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
   <span class='id identifier rubyid_left_offset'>left_offset</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="#DEFS-constant" title="CardsRepositoryHelper::DEFS (constant)">DEFS</a></span></span><span class='lbracket'>[</span><span class='id identifier rubyid_defs'>defs</span><span class='rbracket'>]</span>
-  <span class='id identifier rubyid_right_offset'>right_offset</span> <span class='op'>=</span> <span class='id identifier rubyid_offset'>offset</span><span class='period'>.</span><span class='id identifier rubyid_positive?'>positive?</span> <span class='op'>?</span> <span class='id identifier rubyid_offset'>offset</span> <span class='op'>:</span> <span class='id identifier rubyid_left_offset'>left_offset</span>
+  <span class='comment'># !!!!!!!!!!!КОСТЫЛЬ!!!!!!!!!!!
+</span>  <span class='comment'># В этом году первая неделя - 2я, поэтому смещение на -1
+</span>  <span class='comment'># TODO фикс костыля
+</span>  <span class='id identifier rubyid_offset'>offset</span> <span class='op'>-=</span> <span class='int'>1</span> <span class='kw'>if</span> <span class='id identifier rubyid_defs'>defs</span> <span class='op'>==</span> <span class='symbol'>:weeks</span>
+  <span class='id identifier rubyid_right_offset'>right_offset</span> <span class='op'>=</span> <span class='id identifier rubyid_offset'>offset</span> <span class='op'>&gt;=</span> <span class='int'>0</span> <span class='op'>?</span> <span class='id identifier rubyid_offset'>offset</span> <span class='op'>:</span> <span class='id identifier rubyid_left_offset'>left_offset</span>
   <span class='id identifier rubyid_mask'>mask</span> <span class='op'>=</span> <span class='id identifier rubyid_marker'>marker</span> <span class='kw'>unless</span> <span class='id identifier rubyid_offset'>offset</span><span class='period'>.</span><span class='id identifier rubyid_positive?'>positive?</span>
   <span class='id identifier rubyid_marker'>marker</span><span class='period'>.</span><span class='id identifier rubyid_rjust'>rjust</span><span class='lparen'>(</span><span class='id identifier rubyid_right_offset'>right_offset</span><span class='comma'>,</span> <span class='id identifier rubyid_mask'>mask</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_ljust'>ljust</span><span class='lparen'>(</span><span class='id identifier rubyid_left_offset'>left_offset</span><span class='comma'>,</span> <span class='id identifier rubyid_mask'>mask</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
@@ -629,12 +637,12 @@ as marker at defined position and other symbols are mask</li>
       <pre class="lines">
 
 
-63
-64
-65</pre>
+66
+67
+68</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/repositories/support/cards_repository_helper.rb', line 63</span>
+      <pre class="code"><span class="info file"># File 'app/repositories/support/cards_repository_helper.rb', line 66</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_round_to_next_week'>round_to_next_week</span><span class='lparen'>(</span><span class='id identifier rubyid_date'>date</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_date'>date</span> <span class='op'>+</span> <span class='id identifier rubyid_days_until_next_week'>days_until_next_week</span><span class='lparen'>(</span><span class='id identifier rubyid_date'>date</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_days'>days</span>
@@ -707,12 +715,12 @@ as marker at defined position and other symbols are mask</li>
       <pre class="lines">
 
 
-69
-70
-71</pre>
+72
+73
+74</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/repositories/support/cards_repository_helper.rb', line 69</span>
+      <pre class="code"><span class="info file"># File 'app/repositories/support/cards_repository_helper.rb', line 72</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_round_to_pred_week'>round_to_pred_week</span><span class='lparen'>(</span><span class='id identifier rubyid_date'>date</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_date'>date</span> <span class='op'>-</span> <span class='id identifier rubyid_date'>date</span><span class='period'>.</span><span class='id identifier rubyid_cwday'>cwday</span><span class='period'>.</span><span class='id identifier rubyid_days'>days</span>
@@ -737,12 +745,12 @@ as marker at defined position and other symbols are mask</li>
       <pre class="lines">
 
 
+17
 18
-19
-20</pre>
+19</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/repositories/support/cards_repository_helper.rb', line 18</span>
+      <pre class="code"><span class="info file"># File 'app/repositories/support/cards_repository_helper.rb', line 17</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_studying_begin_date'>studying_begin_date</span>
   <span class='const'>Date</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_this_year'>this_year</span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="#STUDYING_MONTH-constant" title="CardsRepositoryHelper::STUDYING_MONTH (constant)">STUDYING_MONTH</a></span></span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="#STUDYING_DAY-constant" title="CardsRepositoryHelper::STUDYING_DAY (constant)">STUDYING_DAY</a></span></span><span class='rparen'>)</span>
@@ -767,12 +775,12 @@ as marker at defined position and other symbols are mask</li>
       <pre class="lines">
 
 
+13
 14
-15
-16</pre>
+15</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/repositories/support/cards_repository_helper.rb', line 14</span>
+      <pre class="code"><span class="info file"># File 'app/repositories/support/cards_repository_helper.rb', line 13</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_this_year'>this_year</span>
   <span class='const'>Date</span><span class='period'>.</span><span class='id identifier rubyid_today'>today</span><span class='period'>.</span><span class='id identifier rubyid_year'>year</span>
@@ -864,15 +872,15 @@ as marker at defined position and other symbols are mask</li>
       <pre class="lines">
 
 
-48
-49
-50
 51
 52
-53</pre>
+53
+54
+55
+56</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/repositories/support/cards_repository_helper.rb', line 48</span>
+      <pre class="code"><span class="info file"># File 'app/repositories/support/cards_repository_helper.rb', line 51</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_weeks_number_between_dates'>weeks_number_between_dates</span><span class='lparen'>(</span><span class='id identifier rubyid_start_date'>start_date</span><span class='comma'>,</span> <span class='id identifier rubyid_end_date'>end_date</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_start_date'>start_date</span> <span class='op'>=</span> <span class='id identifier rubyid_round_to_pred_week'>round_to_pred_week</span><span class='lparen'>(</span><span class='id identifier rubyid_start_date'>start_date</span><span class='rparen'>)</span>
@@ -950,12 +958,12 @@ until pased date</li>
       <pre class="lines">
 
 
+24
 25
-26
-27</pre>
+26</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/repositories/support/cards_repository_helper.rb', line 25</span>
+      <pre class="code"><span class="info file"># File 'app/repositories/support/cards_repository_helper.rb', line 24</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_weeks_number_from_studying_begin_until_date'>weeks_number_from_studying_begin_until_date</span><span class='lparen'>(</span><span class='id identifier rubyid_date'>date</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_weeks_number_between_dates'>weeks_number_between_dates</span><span class='lparen'>(</span><span class='id identifier rubyid_studying_begin_date'>studying_begin_date</span><span class='comma'>,</span> <span class='id identifier rubyid_date'>date</span><span class='rparen'>)</span>
@@ -970,7 +978,7 @@ until pased date</li>
 </div>
 
       <div id="footer">
-  Generated on Thu Nov 29 01:10:01 2018 by
+  Generated on Fri Dec  7 10:38:36 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.16 (ruby-2.5.1).
 </div>

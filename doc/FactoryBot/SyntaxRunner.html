@@ -418,8 +418,8 @@ for modifying</li>
 <span class='kw'>def</span> <span class='id identifier rubyid_update_days_and_weeks_for'>update_days_and_weeks_for</span><span class='lparen'>(</span><span class='id identifier rubyid_mongoid_document'>mongoid_document</span><span class='comma'>,</span> <span class='id identifier rubyid_date'>date</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_weeks_number'>weeks_number</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../CardsRepositoryHelper.html" title="CardsRepositoryHelper (module)">CardsRepositoryHelper</a></span></span><span class='period'>.</span><span class='id identifier rubyid_weeks_number_from_studying_begin_until_date'><span class='object_link'><a href="../CardsRepositoryHelper.html#weeks_number_from_studying_begin_until_date-class_method" title="CardsRepositoryHelper.weeks_number_from_studying_begin_until_date (method)">weeks_number_from_studying_begin_until_date</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_date'>date</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_attributes'>attributes</span> <span class='op'>=</span> <span class='lbrace'>{</span>
-    <span class='label'>daysdef:</span> <span class='id identifier rubyid_first_or_create'>first_or_create</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="../Daysdef.html" title="Daysdef (class)">Daysdef</a></span></span><span class='comma'>,</span> <span class='label'>short:</span> <span class='id identifier rubyid_date'>date</span><span class='period'>.</span><span class='id identifier rubyid_cwday'>cwday</span><span class='rparen'>)</span><span class='comma'>,</span>
-    <span class='label'>weeksdef:</span> <span class='id identifier rubyid_first_or_create'>first_or_create</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="../Weeksdef.html" title="Weeksdef (class)">Weeksdef</a></span></span><span class='comma'>,</span> <span class='label'>short:</span> <span class='id identifier rubyid_weeks_number'>weeks_number</span><span class='rparen'>)</span>
+      <span class='label'>daysdef:</span> <span class='id identifier rubyid_first_or_create'>first_or_create</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="../Daysdef.html" title="Daysdef (class)">Daysdef</a></span></span><span class='comma'>,</span> <span class='label'>short:</span> <span class='id identifier rubyid_date'>date</span><span class='period'>.</span><span class='id identifier rubyid_cwday'>cwday</span><span class='rparen'>)</span><span class='comma'>,</span>
+      <span class='label'>weeksdef:</span> <span class='id identifier rubyid_first_or_create'>first_or_create</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="../Weeksdef.html" title="Weeksdef (class)">Weeksdef</a></span></span><span class='comma'>,</span> <span class='label'>short:</span> <span class='id identifier rubyid_weeks_number'>weeks_number</span><span class='rparen'>)</span>
   <span class='rbrace'>}</span>
   <span class='id identifier rubyid_mongoid_document'>mongoid_document</span><span class='period'>.</span><span class='id identifier rubyid_set'>set</span><span class='lparen'>(</span><span class='id identifier rubyid_attributes'>attributes</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_mongoid_document'>mongoid_document</span>
@@ -434,7 +434,7 @@ for modifying</li>
 </div>
 
       <div id="footer">
-  Generated on Thu Nov 29 01:10:04 2018 by
+  Generated on Fri Dec  7 10:38:38 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.16 (ruby-2.5.1).
 </div>
