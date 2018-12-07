@@ -139,7 +139,7 @@ function constantSummaryToggle() {
            $(this).text( $(this).text().split('=')[0]);
           if ($(this).has(".deprecated").length) {
              $(this).addClass('deprecated');
-          }
+          };
         });
         // Add the value of the constant as "Tooltip" to the summary object
         list.find('pre.code').each(function() {
@@ -148,8 +148,8 @@ function constantSummaryToggle() {
           var tooltip = $(this).text();
           if (dt_element.hasClass("deprecated")) {
              tooltip = 'Deprecated. ' + tooltip;
-          }
-            dt_element.attr('title', tooltip);
+          };
+          dt_element.attr('title', tooltip);
         });
         list.find('.docstring, .tags, dd').remove();
         next.before(list);

@@ -11,23 +11,23 @@ module TimetableCheckService
   def new_timetable?
     is_new = true
     unless TimetableFileInfo.last.nil?
-      is_new = TimetableCheckService.modified_sience?(last_timetable_datetime_with_zone)
+      is_new = TimetableCheckService.modified_since?(last_timetable_datetime_with_zone)
     end
     is_new
   end
 
-  # Check, was the timetable changed sience passed datetime in rfc822-format
+  # Check, was the timetable changed since passed datetime in rfc822-format
   # @return [Boolean] True if passed datetime is not equal to last_modified result
   #  False else
   # @see #last_modified 
-  def modified_sience?(datetime_string)
+  def modified_since?(datetime_string)
     last_modified != datetime_string
   end
 
   # Return datetime of last modifying
   # @return [String] Datetime in rfc822
   def last_modified
-    url = TimetableCheckService.make_uri
+    url = make_uri
     http = Net::HTTP.new(url.host, url.port)
     request = Net::HTTP::Head.new(url)
     request['if-modified-since'] = ''
@@ -35,13 +35,15 @@ module TimetableCheckService
     response['last-modified']
   end
 
+
+  # @return [URI] Uri to timetable url
   def make_uri
     URI(TimetableMongoidRepository.timetable_url)
   end
 
   # Last known datetime of timetable change
-  # @return [String, Nil] Return nil if there is no info about last timetable change,
-  #  datetime in rfc822 else
+  # @return [String, Nil] Return nil if there is no info about last timetable
+  #  change, datetime in rfc822 else
   def last_timetable_datetime_with_zone
     TimetableFileInfo.last.last_modified
   end

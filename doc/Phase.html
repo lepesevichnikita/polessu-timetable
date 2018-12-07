@@ -4,7 +4,7 @@
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>
-  Class: Daysdef
+  Class: Phase
   
     &mdash; Documentation by YARD 0.9.16
   
@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
 
 <script type="text/javascript" charset="utf-8">
-  pathId = "Daysdef";
+  pathId = "Phase";
   relpath = '';
 </script>
 
@@ -36,10 +36,10 @@
       <div id="header">
         <div id="menu">
   
-    <a href="_index.html">Index (D)</a> &raquo;
+    <a href="_index.html">Index (P)</a> &raquo;
     
     
-    <span class="title">Daysdef</span>
+    <span class="title">Phase</span>
   
 </div>
 
@@ -59,7 +59,7 @@
         <div class="clear"></div>
       </div>
 
-      <div id="content"><h1>Class: Daysdef
+      <div id="content"><h1>Class: Phase
   
   
   
@@ -74,7 +74,7 @@
         <ul class="fullTree">
           <li>Object</li>
           
-            <li class="next">Daysdef</li>
+            <li class="next">Phase</li>
           
         </ul>
         <a href="#" class="inheritanceTree">show all</a>
@@ -99,7 +99,7 @@
   
   <dl>
     <dt>Defined in:</dt>
-    <dd>app/models/daysdef.rb</dd>
+    <dd>app/models/phase.rb</dd>
   </dl>
   
 </div>
@@ -141,28 +141,6 @@
 </li>
 
       
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#lessons-instance_method" title="#lessons (instance method)">#<strong>lessons</strong>  &#x21d2; Array&lt;Lesson&gt; </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'></div></span>
-  
-</li>
-
-      
     </ul>
   
     <h2>
@@ -175,7 +153,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#days-instance_method" title="#days (instance method)">#<strong>days</strong>  &#x21d2; String </a>
+      <a href="#endtime-instance_method" title="#endtime (instance method)">#<strong>endtime</strong>  &#x21d2; String </a>
     
 
     
@@ -197,7 +175,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#days=-instance_method" title="#days= (instance method)">#<strong>days=</strong>(days)  &#x21d2; String </a>
+      <a href="#endtime=-instance_method" title="#endtime= (instance method)">#<strong>endtime=</strong>(endtime)  &#x21d2; String </a>
     
 
     
@@ -263,6 +241,50 @@
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#period-instance_method" title="#period (instance method)">#<strong>period</strong>  &#x21d2; String </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#period=-instance_method" title="#period= (instance method)">#<strong>period=</strong>(period)  &#x21d2; String </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#short-instance_method" title="#short (instance method)">#<strong>short</strong>  &#x21d2; String </a>
     
 
@@ -286,6 +308,50 @@
   <span class="summary_signature">
     
       <a href="#short=-instance_method" title="#short= (instance method)">#<strong>short=</strong>(short)  &#x21d2; String </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#starttime-instance_method" title="#starttime (instance method)">#<strong>starttime</strong>  &#x21d2; String </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#starttime=-instance_method" title="#starttime= (instance method)">#<strong>starttime=</strong>(starttime)  &#x21d2; String </a>
     
 
     
@@ -358,21 +424,21 @@
       <pre class="lines">
 
 
-9</pre>
+10</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/daysdef.rb', line 9</span>
+      <pre class="code"><span class="info file"># File 'app/models/phase.rb', line 10</span>
 
-<span class='id identifier rubyid_has_many'>has_many</span> <span class='symbol'>:cards</span><span class='comma'>,</span> <span class='label'>foreign_key:</span> <span class='symbol'>:days</span><span class='comma'>,</span> <span class='label'>primary_key:</span> <span class='symbol'>:days</span></pre>
+<span class='id identifier rubyid_has_many'>has_many</span> <span class='symbol'>:cards</span><span class='comma'>,</span> <span class='label'>foreign_key:</span> <span class='symbol'>:period</span><span class='comma'>,</span> <span class='label'>primary_key:</span> <span class='symbol'>:period</span></pre>
     </td>
   </tr>
 </table>
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="days-instance_method">
+  <h3 class="signature " id="endtime-instance_method">
   
-    #<strong>days</strong>  &#x21d2; <tt>String</tt> 
+    #<strong>endtime</strong>  &#x21d2; <tt>String</tt> 
   
 
   
@@ -406,21 +472,21 @@
       <pre class="lines">
 
 
-4</pre>
+8</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/daysdef.rb', line 4</span>
+      <pre class="code"><span class="info file"># File 'app/models/phase.rb', line 8</span>
 
-<span class='id identifier rubyid_field'>field</span> <span class='symbol'>:days</span><span class='comma'>,</span> <span class='label'>type:</span> <span class='const'>String</span></pre>
+<span class='id identifier rubyid_field'>field</span> <span class='symbol'>:endtime</span><span class='comma'>,</span> <span class='label'>type:</span> <span class='const'>String</span></pre>
     </td>
   </tr>
 </table>
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="days=-instance_method">
+  <h3 class="signature " id="endtime=-instance_method">
   
-    #<strong>days=</strong>(days)  &#x21d2; <tt>String</tt> 
+    #<strong>endtime=</strong>(endtime)  &#x21d2; <tt>String</tt> 
   
 
   
@@ -438,7 +504,7 @@
   
     <li>
       
-        <span class='name'>days</span>
+        <span class='name'>endtime</span>
       
       
         <span class='type'>(<tt>String</tt>)</span>
@@ -446,7 +512,7 @@
       
       
         &mdash;
-        <div class='inline'><p>new days</p>
+        <div class='inline'><p>new endtime</p>
 </div>
       
     </li>
@@ -466,61 +532,6 @@
     </li>
   
 </ul>
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-4</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'app/models/daysdef.rb', line 4</span>
-
-<span class='id identifier rubyid_field'>field</span> <span class='symbol'>:days</span><span class='comma'>,</span> <span class='label'>type:</span> <span class='const'>String</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="lessons-instance_method">
-  
-    #<strong>lessons</strong>  &#x21d2; <tt>Array&lt;<span class='object_link'><a href="Lesson.html" title="Lesson (class)">Lesson</a></span>&gt;</tt> 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    
-
-  </div>
-</div>
-<div class="tags">
-  
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>Array&lt;<span class='object_link'><a href="Lesson.html" title="Lesson (class)">Lesson</a></span>&gt;</tt>)</span>
-      
-      
-      
-    </li>
-  
-</ul>
-
-  <p class="tag_title">See Also:</p>
-  <ul class="see">
-    
-      <li>http://mongoid.org/en/mongoid/docs/relations.html#has_many</li>
-    
-  </ul>
 
 </div><table class="source_code">
   <tr>
@@ -531,9 +542,9 @@
 8</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/daysdef.rb', line 8</span>
+      <pre class="code"><span class="info file"># File 'app/models/phase.rb', line 8</span>
 
-<span class='id identifier rubyid_has_many'>has_many</span> <span class='symbol'>:lessons</span><span class='comma'>,</span> <span class='label'>foreign_key:</span> <span class='symbol'>:daysdefid</span></pre>
+<span class='id identifier rubyid_field'>field</span> <span class='symbol'>:endtime</span><span class='comma'>,</span> <span class='label'>type:</span> <span class='const'>String</span></pre>
     </td>
   </tr>
 </table>
@@ -576,10 +587,10 @@
       <pre class="lines">
 
 
-5</pre>
+4</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/daysdef.rb', line 5</span>
+      <pre class="code"><span class="info file"># File 'app/models/phase.rb', line 4</span>
 
 <span class='id identifier rubyid_field'>field</span> <span class='symbol'>:name</span><span class='comma'>,</span> <span class='label'>type:</span> <span class='const'>String</span></pre>
     </td>
@@ -643,12 +654,127 @@
       <pre class="lines">
 
 
+4</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/phase.rb', line 4</span>
+
+<span class='id identifier rubyid_field'>field</span> <span class='symbol'>:name</span><span class='comma'>,</span> <span class='label'>type:</span> <span class='const'>String</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="period-instance_method">
+  
+    #<strong>period</strong>  &#x21d2; <tt>String</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
 5</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/daysdef.rb', line 5</span>
+      <pre class="code"><span class="info file"># File 'app/models/phase.rb', line 5</span>
 
-<span class='id identifier rubyid_field'>field</span> <span class='symbol'>:name</span><span class='comma'>,</span> <span class='label'>type:</span> <span class='const'>String</span></pre>
+<span class='id identifier rubyid_field'>field</span> <span class='symbol'>:period</span><span class='comma'>,</span> <span class='label'>type:</span> <span class='const'>String</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="period=-instance_method">
+  
+    #<strong>period=</strong>(period)  &#x21d2; <tt>String</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>period</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>new period</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+5</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/phase.rb', line 5</span>
+
+<span class='id identifier rubyid_field'>field</span> <span class='symbol'>:period</span><span class='comma'>,</span> <span class='label'>type:</span> <span class='const'>String</span></pre>
     </td>
   </tr>
 </table>
@@ -694,7 +820,7 @@
 6</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/daysdef.rb', line 6</span>
+      <pre class="code"><span class="info file"># File 'app/models/phase.rb', line 6</span>
 
 <span class='id identifier rubyid_field'>field</span> <span class='symbol'>:short</span><span class='comma'>,</span> <span class='label'>type:</span> <span class='const'>String</span></pre>
     </td>
@@ -761,9 +887,124 @@
 6</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/daysdef.rb', line 6</span>
+      <pre class="code"><span class="info file"># File 'app/models/phase.rb', line 6</span>
 
 <span class='id identifier rubyid_field'>field</span> <span class='symbol'>:short</span><span class='comma'>,</span> <span class='label'>type:</span> <span class='const'>String</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="starttime-instance_method">
+  
+    #<strong>starttime</strong>  &#x21d2; <tt>String</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+7</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/phase.rb', line 7</span>
+
+<span class='id identifier rubyid_field'>field</span> <span class='symbol'>:starttime</span><span class='comma'>,</span> <span class='label'>type:</span> <span class='const'>String</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="starttime=-instance_method">
+  
+    #<strong>starttime=</strong>(starttime)  &#x21d2; <tt>String</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>starttime</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>new starttime</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+7</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/phase.rb', line 7</span>
+
+<span class='id identifier rubyid_field'>field</span> <span class='symbol'>:starttime</span><span class='comma'>,</span> <span class='label'>type:</span> <span class='const'>String</span></pre>
     </td>
   </tr>
 </table>
