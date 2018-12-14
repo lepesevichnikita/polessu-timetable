@@ -1,24 +1,18 @@
-# README
+# Polessu Timetable API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project provide public RESTFull API for getting timetable by groups and teachers on day and week
 
-Things you may want to cover:
+Scrapper of timetable from http://www.polessu.by/ruz/tt.xml is placed in app/lib/timetable
 
-* Ruby version
+api/v1/teachers - All teachers
+api/v1/groups - All groups
+api/v1/teachers/:teacher_id - Teacher by id
+api/v1/groups/:group_id - Group by id
+api/v1/teachers/:teacher_id/cards?definition={day|week}&period={today|tomorrow|this|next|} - Cards by teacher and period of definition
+api/v1/groups/:group_id/cards?definition={day|week}&period={today|tomorrow|this|next|} - Cards by group and period of definition
 
-* System dependencies
+Services for another resources are placed in app/services
 
-* Configuration
+Repositories for quering mongoid collections by model name are placed in app/repositories
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+You can check this project on http://polessu-timetable.herokuapp.com
